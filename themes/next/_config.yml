@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `hexo-site/source/` directory.
-favicon: /favicon.ico
+favicon: images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
 keywords: "Hexo, NexT"
@@ -244,7 +244,7 @@ mathjax:
 #baidu_analytics:
 
 #Duoshuo ShortName
-duoshuo_shortname: shenzekun
+duoshuo_shortname: 
 
 # Disqus
 #disqus_shortname:
@@ -262,7 +262,7 @@ duoshuo_shortname: shenzekun
 #add_this_id:
 
 # Share
-#duoshuo_share: true
+duoshuo_share: true
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -283,7 +283,7 @@ duoshuo_info:
   ua_enable: true
   admin_enable: false
   user_id: 0
-  #admin_nickname: Author
+  admin_nickname: Author
 
 
 # Facebook SDK Support.
@@ -425,5 +425,13 @@ version: 5.0.2
 canvas_nest: true
 
 
+
+
 reward_comment: 您的支持将鼓励我继续创作(其实是用来玩玩的)︿(￣︶￣)︿！
 wechatpay: /image/wechat-reward-image.png
+
+
+
+
+
+

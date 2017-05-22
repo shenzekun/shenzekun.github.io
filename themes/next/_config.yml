@@ -126,7 +126,7 @@ font:
 social:
   #LinkLabel: Link
   GitHub: https://github.com/shenzekun
-
+  jianshu: http://www.jianshu.com/u/b473784d730c
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -139,7 +139,7 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-
+  Jianshu: jianshu
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg

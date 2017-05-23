@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 距离  
+title: Moorez 
 subtitle:    
-description: 努力成为一位优秀的前端工程师！ 
+description: Road endless its long and far, I will seek up and down！ 
 author: shenzekun  
 language: zh-Hans
 timezone:
@@ -93,3 +93,11 @@ sitemap:
     path: sitemap.xml
 baidusitemap:
     path: baidusitemap.xml
+
+
+
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
+

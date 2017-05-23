@@ -11,7 +11,9 @@ keywords: "Hexo, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
+
+
 
 # Specify the date when the site was setup
 #since: 2015
@@ -30,7 +32,7 @@ canonical: true
 menu:
   home: /
   categories: /categories
-  #about: /about
+  about: /about
   archives: /archives
   tags: /tags
   #schedule: /schedule
@@ -126,7 +128,11 @@ font:
 social:
   #LinkLabel: Link
   GitHub: https://github.com/shenzekun
-  jianshu: http://www.jianshu.com/u/b473784d730c
+  简书: http://www.jianshu.com/u/b473784d730c
+  Twitter: https://twitter.com/SzkMoorez
+  SegmentFault: https://segmentfault.com/u/juli_590dd17068b9e
+  csdn: http://blog.csdn.net/qq_33699981?viewmode=list
+  掘金: https://juejin.im/user/5866ed77ac502e00612f1949
 # Social Links Icons
 # Icon Mapping:
 #   Map a menu item to a specific FontAwesome icon name.
@@ -139,8 +145,10 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
-  Jianshu: jianshu
-
+  简书: heartbeat
+  SegmentFault: meh-o
+  csdn: crosshairs
+  掘金: spinner
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
@@ -179,11 +187,16 @@ sidebar:
 
 
 # Blogrolls
-#links_title: Links
+links_title: 推荐阅读
 #links_layout: block
-#links_layout: inline
-#links:
-  #Title: http://example.com/
+links_layout: inline
+links:
+  优设: http://www.uisdc.com/
+  张鑫旭: http://www.zhangxinxu.com/
+  前端书籍资料: http://www.36zhen.com/t?id=3448
+  百度前端技术学院: http://ife.baidu.com/
+  google前端开发基础: http://wf.uisdc.com/cn/
+
 
 
 # ---------------------------------------------------------------
@@ -244,7 +257,7 @@ mathjax:
 #baidu_analytics:
 
 #Duoshuo ShortName
-duoshuo_shortname: 
+#duoshuo_shortname: 
 
 # Disqus
 #disqus_shortname:
@@ -253,7 +266,7 @@ duoshuo_shortname:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
+baidushare: true
 ##  type: button
 
 # Share
@@ -262,7 +275,7 @@ duoshuo_shortname:
 #add_this_id:
 
 # Share
-duoshuo_share: true
+#duoshuo_share: false
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -427,7 +440,7 @@ canvas_nest: true
 
 
 
-reward_comment: 您的支持将鼓励我继续创作(其实是用来玩玩的)︿(￣︶￣)︿！
+reward_comment: 您的支持将鼓励我继续创作！
 wechatpay: /image/wechat-reward-image.png
 
 

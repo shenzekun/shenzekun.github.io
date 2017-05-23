@@ -1,8 +1,8 @@
 ---
 title: 前端学习笔记之js中apply()和call()方法详解
 date: 2017-04-15 11:34:14
-tags: 前端
-categories: 前端js
+tags: js
+categories: 前端
 ---
 
 >经过网上的大量搜索，渐渐明白了apply()和call方法的使用，为此写一篇文章记录一下。

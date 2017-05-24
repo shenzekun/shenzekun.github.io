@@ -3,6 +3,7 @@ title: 学生免费申请JetBrains许可证技巧
 date: 2017-05-22 19:22:51
 tags: 技巧
 categories: 技巧
+copyright: true
 ---
 
 -------

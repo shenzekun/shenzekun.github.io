@@ -1,3 +1,5 @@
+
+
 <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
   {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
     <div class="site-meta-headline">

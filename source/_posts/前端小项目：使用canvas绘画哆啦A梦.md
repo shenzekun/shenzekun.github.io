@@ -3,6 +3,7 @@ title: 前端小项目：使用canvas绘画哆啦A梦
 date: 2017-05-22 22:53:53
 tags: canvas
 categories: 前端
+copyright: true
 ---
 
 ----

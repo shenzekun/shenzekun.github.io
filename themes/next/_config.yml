@@ -443,6 +443,9 @@ canvas_nest: true
 reward_comment: 您的支持将鼓励我继续创作！
 wechatpay: /image/wechat-reward-image.png
 
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
 
 
 

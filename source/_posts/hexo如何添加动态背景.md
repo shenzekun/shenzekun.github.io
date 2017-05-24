@@ -3,6 +3,7 @@ title: next主题如何添加动态背景
 date: 2017-03-04 13:57:37
 tags: hexo
 categories: hexo 
+copyright: true
 ---
 
 -------

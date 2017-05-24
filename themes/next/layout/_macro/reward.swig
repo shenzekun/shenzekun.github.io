@@ -1,3 +1,5 @@
+
+
 {% if theme.alipay or theme.wechatpay %}
   <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
     <div>{{ theme.reward_comment }}</div>
@@ -20,3 +22,5 @@
     </div>
   </div>
 {% endif %}
+
+

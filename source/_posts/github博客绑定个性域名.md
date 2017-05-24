@@ -3,6 +3,7 @@ title: github博客绑定个性域名
 date: 2017-05-22 22:41:34
 tags: 技巧
 categories: 技巧
+copyright: true
 ---
 
 -----

@@ -1,5 +1,5 @@
 ---
-title: hexo的next主题个性化配置教程
+title: hexo的next主题个性化教程:打造炫酷网站
 copyright: true
 date: 2017-05-24 21:34:52
 tags: hexo
@@ -11,6 +11,31 @@ categories: hexo
 >看到有些next主题的网站很炫酷，那么是怎么配置的呢？接下来我会讲一讲如何实现一些炫酷的效果
 
 <!--more-->
+主要有以下21种：
+* 在右上角或者右下角实现fork me on github
+* 添加RSS
+* 添加动态背景
+* 实现点击出现桃心效果
+* 修改文章内链接文本样式
+* 修改文章底部的那个带#号的标签
+* 在每篇文章末尾统一添加“本文结束”标记
+* 修改作者头像并旋转
+* 博文压缩
+* 修改``代码块自定义样式
+* 侧边栏社交小图标设置
+* 主页文章添加阴影效果
+* 在网站底部加上访问量
+* 添加热度
+* 网站底部字数统计
+* 添加 README.md 文件
+* 设置网站的图标Favicon
+* 实现统计功能
+* 添加顶部加载条
+* 在文章底部增加版权信息
+* 添加网易云跟帖
+
+
+---
 
 # 1. 在右上角或者右下角实现fork me on github
 
@@ -181,7 +206,7 @@ passage_end_tag:
 
 ---
 
-# 8. 修改作者头像并旋转：
+# 8. 修改作者头像并旋转
 
 **实现效果图**
 
@@ -346,7 +371,7 @@ code {
 
 **具体实现方法**
 
-打开主题配置文件（`_config.yml`），搜索`social_icons:`,在[图标库](http://fontawesome.io/icons/)找自己喜欢的小图标，并将名字复制在如下位置
+打开主题配置文件（`_config.yml`），搜索`social_icons:`,在[图标库](http://fontawesome.io/icons/)找自己喜欢的小图标，并将名字复制在如下位置，保存即可
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-21e22b05edc57b5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -681,11 +706,67 @@ copyright: true
 
 ---
 
+# 21. 添加网易云跟帖
+
+**实现效果图**
+
+![](http://upload-images.jianshu.io/upload_images/5308475-86b212c1221292ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+**具体方法实现**
+有两种实现方法：
+①更新next主题，因为最新版本的主题已经支持这种评论。直接在主题配置文件`_config.yml` 文件中添加如下配置:
+```
+gentie_productKey: #your-gentie-product-key
+```
+②如果你不想更新的话，那么按下面步骤进行：
+首先，还是在主题配置文件`_config.yml` 文件中添加如下配置:
+```
+gentie_productKey: #your-gentie-product-key
+```
+你的`productKey`就是下面画红线部分
+![](http://upload-images.jianshu.io/upload_images/5308475-2d1eeef55db50cfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+然后在在` layout/_scripts/third-party/comments/` 目录中添加 `gentie.swig`，文件内容如下：
+```
+{% if not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname and not theme.disqus_shortname and not theme.hypercomments_id %}
+  {% if theme.gentie_productKey %}
+    {% set gentie_productKey = theme.gentie_productKey %}
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "{{gentie_productKey}}",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  {% endif %}
+{% endif %}
+```
+然后在`layout/_scripts/third-party/comments.swig`文件中追加：
+```
+{% include './comments/gentie.swig' %}
+
+```
+最后，在 `layout/_partials/comments.swig` 文件中条件最后追加网易云跟帖插件引用的判断逻辑：
+```
+{% elseif theme.gentie_productKey %}
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
+      </div>
+```
+具体位置如下：
+![](http://upload-images.jianshu.io/upload_images/5308475-c9199439d2396989.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+可能你`hexo s`时可能看不到，直接`hexo d`就可以看到了
 
 
-# 总结
 
-> 首先，要感谢很多的大神们的文章，真的学到了许多，有些忘了记录下来，在这里由衷的感谢。虽然比较折腾，但是确实满满的成就感，Road endless its long and far, I will seek up and down！
+---
+
+
+# 致谢
+
+> 感谢大神们的文章，真的学到了许多，有些忘了记录下来，在这里由衷的感谢。虽然比较折腾，但是确实满满的成就感，Road endless its long and far, I will seek up and down！
 
 欢迎访问[我的博客](http://shenzekun.cn/)
 
@@ -696,6 +777,8 @@ copyright: true
 2. http://zidingyi4qh.com/2017/04/27/NexT%E5%BA%95%E9%83%A8logo%E6%B7%BB%E5%8A%A0%E8%AE%BF%E9%97%AE%E9%87%8F/
 3. https://fuyis.me/2017/01/25/Hexo-theme-next-and-optimized-configuration/
 4. http://www.vitah.net/posts/20f300cc/
+5. http://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/
+
 ---
 
 

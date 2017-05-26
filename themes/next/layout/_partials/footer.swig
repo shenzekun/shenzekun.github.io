@@ -16,7 +16,7 @@
 </span>
 </div>
 
-<div class="powered-by">
+<!-- <div class="powered-by">
   {{ __('footer.powered', '<a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a>') }}
 </div>
 
@@ -25,12 +25,11 @@
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT.{{ theme.scheme }}
   </a>
-
- 
 </div>
+-->
 
 <div class="theme-info">
-  <div class="powered-by"></div>
+  <!-- <div class="powered-by"></div> -->
   <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
 </div>
 

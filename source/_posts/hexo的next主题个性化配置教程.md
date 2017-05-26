@@ -11,8 +11,8 @@ categories: hexo
 >看到有些next主题的网站很炫酷，那么是怎么配置的呢？接下来我会讲一讲如何实现一些炫酷的效果
 
 <!--more-->
-主要有以下21种：
-* 在右上角或者右下角实现fork me on github
+主要有以下28种：
+* 在右上角或者左上角实现fork me on github
 * 添加RSS
 * 添加动态背景
 * 实现点击出现桃心效果
@@ -33,11 +33,18 @@ categories: hexo
 * 添加顶部加载条
 * 在文章底部增加版权信息
 * 添加网易云跟帖
+* 隐藏网页底部powered By Hexo / 强力驱动
+* 修改网页底部的桃心
+* 文章加密访问
+* 添加jiathis分享
+* 博文置顶
+* 修改字体大小
+* 修改打赏字体不闪动
 
 
 ---
 
-# 1. 在右上角或者右下角实现fork me on github
+# 1. 在右上角或者左上角实现fork me on github
 
 **实现效果图**
 
@@ -762,6 +769,142 @@ gentie_productKey: #your-gentie-product-key
 
 
 ---
+
+# 22. 隐藏网页底部powered By Hexo / 强力驱动
+打开`themes/next/layout/_partials/footer.swig`,使用”<!-- -->”隐藏之间的代码即可，或者直接删除。位置如图：
+
+![](http://upload-images.jianshu.io/upload_images/5308475-8e8340c7a0489bce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+---
+
+# 23. 修改网页底部的桃心
+还是打开`themes/next/layout/_partials/footer.swig`，找到：
+![](http://upload-images.jianshu.io/upload_images/5308475-f6355823aef7f723.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)，然后还是在[图标库](http://fontawesome.io/icons/)中找到你自己喜欢的图标，然后修改画红线的部分就可以了。
+
+---
+
+# 24. 文章加密访问
+
+**实现效果图**
+
+![](http://upload-images.jianshu.io/upload_images/5308475-0c7e5e61b78dc937.gif?imageMogr2/auto-orient/strip)
+
+**具体实现方法**
+
+打开`themes->next->layout->_partials->head.swig`文件,在以下位置插入这样一段代码：
+
+![](http://upload-images.jianshu.io/upload_images/5308475-446793cd6d740b19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+代码如下：
+```
+<script>
+    (function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+```
+然后在文章上写成类似这样：
+
+![](http://upload-images.jianshu.io/upload_images/5308475-e6c726a0152cb8ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+---
+
+# 25. 添加jiathis分享
+
+在**主题配置文件**中，jiathis为true，就行了，如下图
+
+![](http://upload-images.jianshu.io/upload_images/5308475-f381bc9e7c73b1e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+默认是这样子的：
+![](http://upload-images.jianshu.io/upload_images/5308475-a88228b9ea43ab2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+如果你想自定义话，打开`themes/next/layout/_partials/share/jiathis.swig`修改画红线部分就可以了
+![](http://upload-images.jianshu.io/upload_images/5308475-68c51498744e1636.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+---
+
+# 26. 博文置顶
+修改 `hero-generator-index` 插件，把文件：`node_modules/hexo-generator-index/lib/generator.js` 内的代码替换为：
+```
+'use strict';
+var pagination = require('hexo-pagination');
+module.exports = function(locals){
+  var config = this.config;
+  var posts = locals.posts;
+    posts.data = posts.data.sort(function(a, b) {
+        if(a.top && b.top) { // 两篇文章top都有定义
+            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+            else return b.top - a.top; // 否则按照top值降序排
+        }
+        else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+            return -1;
+        }
+        else if(!a.top && b.top) {
+            return 1;
+        }
+        else return b.date - a.date; // 都没定义按照文章日期降序排
+    });
+  var paginationDir = config.pagination_dir || 'page';
+  return pagination('', posts, {
+    perPage: config.index_generator.per_page,
+    layout: ['index', 'archive'],
+    format: paginationDir + '/%d/',
+    data: {
+      __index: true
+    }
+  });
+};
+```
+在文章中添加 `top` 值，数值越大文章越靠前，如
+```
+---
+title: 解决Charles乱码问题
+date: 2017-05-22 22:45:48
+tags: 技巧
+categories: 技巧
+copyright: true
+top: 100
+---
+
+```
+
+---
+
+# 27. 修改字体大小
+
+打开`\themes\next\source\css\ _variables\base.styl`文件，将`$font-size-base`改成`16px`，如下所示：
+```
+$font-size-base            =16px
+```
+
+---
+
+# 28. 修改打赏字体不闪动
+
+修改文件`next/source/css/_common/components/post/post-reward.styl`，然后注释其中的函数`wechat:hover`和`alipay:hover`，如下：
+```
+/* 注释文字闪动函数
+ #wechat:hover p{
+    animation: roll 0.1s infinite linear;
+    -webkit-animation: roll 0.1s infinite linear;
+    -moz-animation: roll 0.1s infinite linear;
+}
+ #alipay:hover p{
+   animation: roll 0.1s infinite linear;
+    -webkit-animation: roll 0.1s infinite linear;
+    -moz-animation: roll 0.1s infinite linear;
+}
+*/
+```
+
+---
+
 
 
 # 致谢

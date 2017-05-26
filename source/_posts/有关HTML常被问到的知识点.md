@@ -24,30 +24,30 @@ copyright: true
 <body>Don't forget me this weekend!</body>
 </note>
 ```
->），主要用于存储数据和结构，可扩展
+），主要用于存储数据和结构，可扩展
 
-#### HTML和XML的区别：
-* ##### XML 被设计用来传输和存储数据，其焦点是数据的内容。
-* ##### HTML 被设计用来显示数据，其焦点是数据的外观。
-* ##### HTML 旨在显示信息，而 XML 旨在传输信息。
-* ##### XML在定义标记时区分大小写，而HTML标记不区分大小写。
+## HTML和XML的区别：
+1. XML 被设计用来传输和存储数据，其焦点是数据的内容。
+2. HTML 被设计用来显示数据，其焦点是数据的外观。
+3. HTML 旨在显示信息，而 XML 旨在传输信息。
+4. XML在定义标记时区分大小写，而HTML标记不区分大小写。
 
 
-#### HTML和XHTML的区别：
+## HTML和XHTML的区别：
  
-* ##### XHTML 元素必须被正确地嵌套。
+1. XHTML 元素必须被正确地嵌套。
 例如：XHTML必须要这样`<b><i>This text is bold and italic</i></b>`
 而在 HTML 中，某些元素可以像这样彼此不正确地嵌套：
 `<b><i>This text is bold and italic</b></i>`
 
-* ##### XHTML 元素必须被关闭。
+2. XHTML 元素必须被关闭。
 *例如*`<p>This is a paragraph</p>`===>>*这是正确的*
 `<p>This is a paragraph`===>>*这是错误的*
-* ##### 标签名必须用小写字母。
+3. 标签名必须用小写字母。
 *例如: *`<p>This is a paragraph</p>`==>>*这是正确的*
 ` <P>This is a paragraph</P>`===>>*这是错误的*
 
-* ##### XHTML 文档必须拥有根元素。
+4. XHTML 文档必须拥有根元素。
 所有的 XHTML 元素必须被嵌套于 `<html>` 根元素中
 
 ---
@@ -58,6 +58,7 @@ copyright: true
 
 
 ## 怎样理解 HTML 语义化?
+
 >HTML语义化是让大家直观的认识标签(markup)和属性(attribute)的用途和作用，选择合适的标签（代码语义化）便于开发者阅读和写出更优雅的代码的同时让浏览器的爬虫和机器很好地解析，并且便于团队开发和维护。
 
 ---

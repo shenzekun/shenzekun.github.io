@@ -451,4 +451,11 @@ passage_end_tag:
 gentie_productKey: 8fdf4fbeb7a141dcb950124b2912ed0f
 
 
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+
 

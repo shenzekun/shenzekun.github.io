@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: http://shenzekun.github.io/sitemap.xml
-Sitemap: http://shenzekun.github.io/baidusitemap.xml
+Sitemap: http://www.shenzekun.cn/sitemap.xml
+Sitemap: http://www.shenzekun.cn/baidusitemap.xml

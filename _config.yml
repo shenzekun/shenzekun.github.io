@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://shenzekun.cn   
+url: http://www.shenzekun.cn   
 root: /
 permalink: :title.html 
 permalink_defaults:
@@ -69,9 +69,12 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/shenzekun/shenzekun.github.io.git
   branch: master
+- type: baidu_url_submitter
+
+
 
 
 
@@ -87,6 +90,8 @@ search:
 avatar: http://om8u46rmb.bkt.clouddn.com/avatar1.jpg
 
 
+# Extensions
+Plugins: hexo-generator-sitemap
 
 # hexo sitemap网站地图
 sitemap:
@@ -100,4 +105,10 @@ baidusitemap:
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
+
+baidu_url_submit:
+  count: 100 ## 比如3，代表提交最新的三个链接
+  host: www.shenzekun.cn ## 在百度站长平台中注册的域名
+  token: N2ADxv8c2YsN7MQv ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 

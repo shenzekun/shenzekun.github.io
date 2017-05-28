@@ -3,10 +3,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="google-site-verification" content="PBwskePkFkRAnqisXEBN7FyYihV0DkOHyvEC2eDt6Gg" />
 
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css" rel="stylesheet">
-
-
+{% if theme.pace %}
+  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/pace-theme-flash.min.css?v=1.0.2') %}
+    {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
+      {% if theme.vendors.pace %}
+        {% set pace_js_uri = theme.vendors.pace %}
+    {% endif %}
+    {% if theme.vendors.pace_css %}
+        {% set pace_css_uri = theme.vendors.pace_css %}
+    {% endif %}
+   <script src="{{ pace_js_uri }}"></script>
+   <link href="{{ pace_css_uri }}" rel="stylesheet">
+{% endif %}
 
 {# #238, Disable Baidu tranformation #}
 <meta http-equiv="Cache-Control" content="no-transform" />

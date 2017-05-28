@@ -77,10 +77,10 @@ scheme: Mist
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host: fonts.useso.com
+  host: 
 
   # Global font settings used on <body> element.
   global:
@@ -422,6 +422,13 @@ vendors:
   # See: http://fontawesome.io/
   fontawesome:
 
+  # See: https://github.com/HubSpot/pace
+  # Or use direct links below:
+  # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
+  pace:
+  pace_css:
+
 
 # Assets
 css: css
@@ -459,4 +466,5 @@ post_wordcount:
   wordcount: true
   min2read: true
 
-
+# Progress bar in the top during page loading.
+pace: true

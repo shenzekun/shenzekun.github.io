@@ -19,9 +19,7 @@
         </noscript>
       </div>
 
-      {% elseif theme.gentie_productKey %}
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
-      </div>
+   
       
     {% endif %}
 

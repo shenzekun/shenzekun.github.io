@@ -7,6 +7,11 @@ copyright: true
 ---
 
 -------
+
+>**注意**：如果next主题在5.1.1以上的话就不用我这样设置，直接在主题配置文件中找到canvas_nest: false，把它改为canvas_nest: true就行了（注意分号后面要加一个空格）
+
+
+
 其实挺简单的︿(￣︶￣)︿
 ### 修改`_layout.swig`
 

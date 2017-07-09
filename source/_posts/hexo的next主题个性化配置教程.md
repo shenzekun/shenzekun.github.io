@@ -11,7 +11,7 @@ categories: hexo
 >看到有些next主题的网站很炫酷，那么是怎么配置的呢？接下来我会讲一讲如何实现一些炫酷的效果
 
 <!--more-->
-主要有以下28种：
+主要有以下29种：
 * 在右上角或者左上角实现fork me on github
 * 添加RSS
 * 添加动态背景
@@ -40,7 +40,7 @@ categories: hexo
 * 博文置顶
 * 修改字体大小
 * 修改打赏字体不闪动
-
+* 侧边栏推荐阅读
 
 ---
 
@@ -575,6 +575,11 @@ post_wordcount:
     }
 </style>
 ```
+ 
+>目前，博主的增加顶部加载条的pull request 已被Merge😀===>[详情](https://github.com/iissnan/hexo-theme-next/pull/1689)
+现在升级最新版的next主题，升级后只需修改主题配置文件(_config.yml)将`pace: false`改为`pace: true`就行了，你还可以换不同样式的加载条，如下图：
+![](http://upload-images.jianshu.io/upload_images/5308475-6d44a78e76dbf950.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ---
 
@@ -695,15 +700,7 @@ post_wordcount:
 ```
 保存重新生成即可。
 如果要在该博文下面增加版权信息的显示，需要在 Markdown 中增加copyright: true的设置，类似：
-```
----
-title: 前端小项目：使用canvas绘画哆啦A梦
-date: 2017-05-22 22:53:53
-tags: canvas
-categories: 前端
-copyright: true
----
-```
+
 
 >**小技巧**：如果你觉得每次都要输入`copyright: true`很麻烦的话,那么在`/scaffolds/post.md`文件中添加：
 ![](http://upload-images.jianshu.io/upload_images/5308475-51f087ce1f1903a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -713,7 +710,7 @@ copyright: true
 
 ---
 
-# 21. 添加网易云跟帖
+# 21. 添加网易云跟帖(跟帖关闭，已失效)
 
 **实现效果图**
 
@@ -905,7 +902,24 @@ $font-size-base            =16px
 
 ---
 
+# 29. 侧边栏推荐阅读
+今天有位网友问推荐阅读是怎么弄，其实挺简单的，打开主题配置文件修改成这样就行了(links里面写你想要的链接):
+```
+# Blogrolls
+links_title: 推荐阅读
+#links_layout: block
+links_layout: inline
+links:
+  优设: http://www.uisdc.com/
+  张鑫旭: http://www.zhangxinxu.com/
+  Web前端导航: http://www.alloyteam.com/nav/
+  前端书籍资料: http://www.36zhen.com/t?id=3448
+  百度前端技术学院: http://ife.baidu.com/
+  google前端开发基础: http://wf.uisdc.com/cn/
+  
+```
 
+---
 
 # 致谢
 

@@ -456,7 +456,6 @@ passage_end_tag:
   enabled: true
 
 
-gentie_productKey: 8fdf4fbeb7a141dcb950124b2912ed0f
 
 
 # Post wordcount display settings
@@ -468,3 +467,21 @@ post_wordcount:
 
 # Progress bar in the top during page loading.
 pace: true
+# pace theme 
+# pace_theme list:
+#pace-theme-big-counter
+#pace-theme-bounce
+#pace-theme-barber-shop
+#pace-theme-center-atom
+#pace-theme-center-circle
+#pace-theme-center-radar
+#pace-theme-center-simple
+#pace-theme-corner-indicator
+#pace-theme-fill-left
+#pace-theme-flash
+#pace-theme-loading-bar
+#pace-theme-mac-osx
+#pace-theme-minimal
+# For example
+#    pace_theme: pace-theme-center-simple
+pace_theme: pace-theme-flash

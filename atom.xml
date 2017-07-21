@@ -103,14 +103,14 @@
     <link href="http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
     <id>http://www.shenzekun.cn/hexo的next主题个性化配置教程.html</id>
     <published>2017-05-24T13:34:52.000Z</published>
-    <updated>2017-07-21T08:32:38.000Z</updated>
+    <updated>2017-07-21T11:49:47.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <blockquote>
 <p>看到有些next主题的网站很炫酷，那么是怎么配置的呢？接下来我会讲一讲如何实现一些炫酷的效果</p>
 </blockquote>
 <a id="more"></a>
-<p>主要有以下30种：</p>
+<p>主要有以下31种：</p>
 <ul>
 <li>在右上角或者左上角实现fork me on github</li>
 <li>添加RSS</li>
@@ -142,6 +142,7 @@
 <li>修改打赏字体不闪动</li>
 <li>侧边栏推荐阅读</li>
 <li>自定义鼠标样式</li>
+<li>为博客加上萌萌的宠物</li>
 </ul>
 <hr>
 <h1 id="1-在右上角或者左上角实现fork-me-on-github"><a href="#1-在右上角或者左上角实现fork-me-on-github" class="headerlink" title="1. 在右上角或者左上角实现fork me on github"></a>1. 在右上角或者左上角实现fork me on github</h1><p><strong>实现效果图</strong></p>
@@ -382,6 +383,52 @@
 <h1 id="30-自定义鼠标样式"><a href="#30-自定义鼠标样式" class="headerlink" title="30. 自定义鼠标样式"></a>30. 自定义鼠标样式</h1><p>打开<code>themes/next/source/css/_custom/custom.styl</code>,在里面写下如下代码</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 鼠标样式</span></div><div class="line">  * &#123;</div><div class="line">      <span class="attribute">cursor</span>: url(<span class="string">"http://om8u46rmb.bkt.clouddn.com/sword2.ico"</span>),auto<span class="meta">!important</span></div><div class="line">  &#125;</div><div class="line">  <span class="selector-pseudo">:active</span> &#123;</div><div class="line">      <span class="attribute">cursor</span>: url(<span class="string">"http://om8u46rmb.bkt.clouddn.com/sword1.ico"</span>),auto<span class="meta">!important</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>其中 url 里面必须是 ico 图片，ico 图片可以上传到网上（我是使用七牛云图床），然后获取外链，复制到 url 里就行了</p>
+<hr>
+<h1 id="31-为博客加上萌萌的宠物"><a href="#31-为博客加上萌萌的宠物" class="headerlink" title="31.为博客加上萌萌的宠物"></a>31.为博客加上萌萌的宠物</h1><p><strong>实现效果图</strong><br><img src="http://ohggtqwxx.bkt.clouddn.com/15006365382590.jpg" alt=""></p>
+<p><strong>具体实现方法</strong><br>在终端切换到你的博客的路径里，然后输入如下代码：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> -<span class="keyword">save</span> hexo-helper-live2d</div></pre></td></tr></table></figure>
+<p>然后打开<code>Hexo/blog/themes/next/layout</code><br>的<code>_layout.swig</code>,将下面代码放到<code>&lt;/body&gt;</code>之前：</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123; live2d() &#125;&#125;</div></pre></td></tr></table></figure>
+<p>然后在在 <code>hexo</code> 的 <code>_config.yml</code>中添加参数：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">live2d:</span></div><div class="line"><span class="symbol">  model:</span> wanko</div><div class="line"><span class="symbol">  bottom:</span> <span class="number">-30</span></div></pre></td></tr></table></figure>
+<p>然后hexo clean ，hexo g ，hexo d 就可以看到了。</p>
+<p><strong>下面是一些model，可以换不同的宠物</strong></p>
+<ul>
+<li>model 模型名称 默认值: z16<ul>
+<li>Gantzert_Felixander</li>
+<li>Epsilon2.1</li>
+<li>haru</li>
+<li>miku</li>
+<li>ni-j</li>
+<li>nico</li>
+<li>nito</li>
+<li>nipsilon</li>
+<li>nietzsche</li>
+<li>shizuku</li>
+<li>tsumiki</li>
+<li>wanko</li>
+<li>z16</li>
+<li>hibiki</li>
+<li>koharu</li>
+<li>haruto</li>
+<li>Unitychan</li>
+<li>tororo</li>
+<li>hijiki</li>
+</ul>
+</li>
+<li>width 宽度 默认值: 150</li>
+<li>height 高度 默认值： 300</li>
+<li>className <code>&lt;canvas&gt;</code>元素的类名 默认值： live2d</li>
+<li>id <code>&lt;canvas&gt;</code> 元素的id 默认值： live2dcanvas</li>
+<li>bottom <code>&lt;canvas&gt;</code> 元素的底部偏移 默认值： -20 如果嫌模型位置不正确 可以调整这个参数</li>
+</ul>
+<blockquote>
+<p>注意！如果你在 hexo d 的时候出现我下面这个问题<br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fhrqw92685j31dk0q4grl.jpg" alt=""><br>你可以这样，首先删除hexo 下面的.deploy_git文件夹，然后运行</p>
+</blockquote>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --<span class="keyword">global</span> core.autocrlf <span class="literal">false</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>重新 hexo clean,hexo g,hexo d就行了</p>
+</blockquote>
 <hr>
 <h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><blockquote>
 <p>感谢大神们的文章，真的学到了许多，有些忘了记录下来，在这里由衷的感谢。虽然比较折腾，但是确实满满的成就感，Road endless its long and far, I will seek up and down！</p>

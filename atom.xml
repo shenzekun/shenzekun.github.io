@@ -103,7 +103,7 @@
     <link href="http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
     <id>http://www.shenzekun.cn/hexo的next主题个性化配置教程.html</id>
     <published>2017-05-24T13:34:52.000Z</published>
-    <updated>2017-07-21T11:49:47.000Z</updated>
+    <updated>2017-07-21T12:08:51.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <blockquote>
@@ -422,6 +422,7 @@
 <li>id <code>&lt;canvas&gt;</code> 元素的id 默认值： live2dcanvas</li>
 <li>bottom <code>&lt;canvas&gt;</code> 元素的底部偏移 默认值： -20 如果嫌模型位置不正确 可以调整这个参数</li>
 </ul>
+<p>这个有个缺点，如果是在手机上看的话，感觉不是挺好，宠物一直挡着文字😂😂<br><img src="http://ohggtqwxx.bkt.clouddn.com/15006388832427.jpg" alt=""></p>
 <blockquote>
 <p>注意！如果你在 hexo d 的时候出现我下面这个问题<br><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fhrqw92685j31dk0q4grl.jpg" alt=""><br>你可以这样，首先删除hexo 下面的.deploy_git文件夹，然后运行</p>
 </blockquote>

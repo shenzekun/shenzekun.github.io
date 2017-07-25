@@ -103,7 +103,7 @@
     <link href="http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html"/>
     <id>http://www.shenzekun.cn/hexo的next主题个性化配置教程.html</id>
     <published>2017-05-24T13:34:52.000Z</published>
-    <updated>2017-07-21T14:47:13.000Z</updated>
+    <updated>2017-07-25T10:04:20.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <blockquote>
@@ -338,7 +338,7 @@
 <p>😭都是泪,上次用了多说，结果多说关了，接着是网易云跟帖😷，这次直接用国外的来必力，应该不会这么容易关吧😏</p>
 </blockquote>
 <p>方法其实还是跟上面差不多的</p>
-<p>首先在 <code>_config.yml</code> 文件中添加如下配置：</p>
+<p>首先在 <code>_config.yml</code> 文件中添加如下配置：(<strong>注意！如果主题是最新版的，直接写 你的liver_uid就行了</strong>)</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Support for LiveRe comments <span class="keyword">system</span>.</div><div class="line"># You can get your uid <span class="keyword">from</span> https:<span class="comment">//livere.com/insight/myCode (General web site)</span></div><div class="line">livere_uid: your uid</div></pre></td></tr></table></figure>
 <p>其中，<code>livere_uid</code>就是画红线的部分<br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fhdqgyeu2fj30ms02yglr.jpg" alt=""></p>
 <p>然后在 <code>layout/_scripts/third-party/comments/</code> 目录中添加 livere.swig，文件内容如下：</p>

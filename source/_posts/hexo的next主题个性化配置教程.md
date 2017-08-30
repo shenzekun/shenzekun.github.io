@@ -8,10 +8,13 @@ categories: hexo
 
 ----
 
+
 >看到有些next主题的网站很炫酷，那么是怎么配置的呢？接下来我会讲一讲如何实现一些炫酷的效果
 
 <!--more-->
-主要有以下29种：
+
+主要有以下31种：
+
 * 在右上角或者左上角实现fork me on github
 * 添加RSS
 * 添加动态背景
@@ -32,7 +35,7 @@ categories: hexo
 * 实现统计功能
 * 添加顶部加载条
 * 在文章底部增加版权信息
-* 添加网易云跟帖
+* 添加网易云跟帖(跟帖关闭，已失效，改为来必力)
 * 隐藏网页底部powered By Hexo / 强力驱动
 * 修改网页底部的桃心
 * 文章加密访问
@@ -41,6 +44,8 @@ categories: hexo
 * 修改字体大小
 * 修改打赏字体不闪动
 * 侧边栏推荐阅读
+* 自定义鼠标样式
+* 为博客加上萌萌的宠物
 
 ---
 
@@ -71,6 +76,7 @@ categories: hexo
 ![](http://upload-images.jianshu.io/upload_images/5308475-e8356e1ca05f23a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 然后安装 Hexo 插件：(这个插件会放在`node_modules`这个文件夹里)
+
 ```
 $ npm install --save hexo-generator-feed
 ```
@@ -80,12 +86,14 @@ $ npm install --save hexo-generator-feed
 ![](http://upload-images.jianshu.io/upload_images/5308475-55f034e749aa8e6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在里面的末尾添加：(**请注意**在冒号后面要加一个空格，不然会发生错误！)
+
 ```
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
 ```
 然后打开next主题文件夹里面的`_config.yml`,在里面配置为如下样子：(就是在`rss:`的后面加上`/atom.xml`,**注意**在冒号后面要加一个空格)
+
 ```
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -93,6 +101,7 @@ plugins: hexo-generate-feed
 rss: /atom.xml
 ```
 配置完之后运行：
+
 ```
 $ hexo g
 ```
@@ -121,10 +130,12 @@ $ hexo g
  **具体实现方法**
 
 在网址输入如下
+
 ```
 http://7u2ss1.com1.z0.glb.clouddn.com/love.js
 ```
 然后将里面的代码copy一下，新建`love.js`文件并且将代码复制进去，然后保存。将`love.js`文件放到路径`/themes/next/source/js/src`里面，然后打开`\themes\next\layout\_layout.swig`文件,在末尾（在前面引用会出现找不到的bug）添加以下代码：
+
 ```
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/src/love.js"></script>
@@ -141,6 +152,7 @@ http://7u2ss1.com1.z0.glb.clouddn.com/love.js
  **具体实现方法**
 
 修改文件 `themes\next\source\css\_common\components\post\post.styl `，在末尾添加如下css样式，：
+
 ```
 // 文章内链接文本样式
 .post-body p a{
@@ -290,6 +302,7 @@ img:hover {
 
 # 9. 博文压缩
 在站点的根目录下执行以下命令：
+
 ```
 $ npm install gulp -g
 $ npm install gulp-minify-css gulp-uglify gulp-htmlmin gulp-htmlclean gulp --save
@@ -417,12 +430,14 @@ code {
 ![](http://upload-images.jianshu.io/upload_images/5308475-ef8a4643f33fbaa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码如下：
+
 ```
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 ```
 然后再合适的位置添加显示统计的代码，如图：
 ![](http://upload-images.jianshu.io/upload_images/5308475-bd6fb55b6847d13a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 代码如下：
+
 ```
 <div class="powered-by">
 <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
@@ -448,7 +463,6 @@ code {
 ```
 添加之后再执行`hexo d -g`，然后再刷新页面就能看到效果
 
-
 ----
 
 # 14. 添加热度
@@ -466,7 +480,6 @@ code {
 然后打开，`/themes/next/languages/zh-Hans.yml`,将画红框的改为热度就可以了
 ![](http://upload-images.jianshu.io/upload_images/5308475-bd0e1ac5456a2f0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
 ---
 
 # 15. 网站底部字数统计
@@ -477,11 +490,13 @@ code {
 
 **具体方法实现**
 切换到根目录下，然后运行如下代码
+
 ```
 $ npm install hexo-wordcount --save
 ```
 
 然后在`/themes/next/layout/_partials/footer.swig`文件尾部加上：
+
 ```
 <div class="theme-info">
   <div class="powered-by"></div>
@@ -511,6 +526,7 @@ skip_render: README.md
 **具体方法实现**
 
 在[EasyIcon](http://www.easyicon.net/)中找一张（32*32）的`ico`图标,或者去别的网站下载或者制作，并将图标名称改为`favicon.ico`，然后把图标放在`/themes/next/source/images`里，并且修改主题配置文件：
+
 ```
 # Put your favicon.ico into `hexo-site/source/` directory.
 favicon: /favicon.ico
@@ -526,10 +542,12 @@ favicon: /favicon.ico
 **具体实现方法**
 
 在根目录下安装 `hexo-wordcount`,运行：
+
 ```
 $ npm install hexo-wordcount --save
 ```
 然后在主题的配置文件中，配置如下：
+
 ```
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
@@ -560,6 +578,7 @@ post_wordcount:
 ```
 
 但是，默认的是粉色的，要改变颜色可以在`/themes/next/layout/_partials/head.swig`文件中添加如下代码（接在刚才link的后面）
+
 ```
 <style>
     .pace .pace-progress {
@@ -575,11 +594,10 @@ post_wordcount:
     }
 </style>
 ```
- 
->目前，博主的增加顶部加载条的pull request 已被Merge😀===>[详情](https://github.com/iissnan/hexo-theme-next/pull/1689)
-现在升级最新版的next主题，升级后只需修改主题配置文件(_config.yml)将`pace: false`改为`pace: true`就行了，你还可以换不同样式的加载条，如下图：
-![](http://upload-images.jianshu.io/upload_images/5308475-6d44a78e76dbf950.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+>目前，博主的增加顶部加载条的pull request 已被Merge😀===>[详情](https://github.com/iissnan/hexo-theme-next/pull/1689)
+>现在升级最新版的next主题，升级后只需修改主题配置文件(_config.yml)将`pace: false`改为`pace: true`就行了，你还可以换不同样式的加载条，如下图：
+>![](http://upload-images.jianshu.io/upload_images/5308475-6d44a78e76dbf950.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 
@@ -590,6 +608,7 @@ post_wordcount:
 ![](http://upload-images.jianshu.io/upload_images/5308475-a264542f53665849.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在目录 `next/layout/_macro/下`添加 `my-copyright.swig`：
+
 ```
 {% if page.copyright %}
 <div class="my_post_copyright">
@@ -675,6 +694,7 @@ post_wordcount:
 }
 ```
 修改`next/layout/_macro/post.swig`，在代码
+
 ```
 <div>
       {% if not is_index %}
@@ -683,6 +703,7 @@ post_wordcount:
 </div>
 ```
 之前添加增加如下代码：
+
 ```
 <div>
       {% if not is_index %}
@@ -695,6 +716,7 @@ post_wordcount:
 ![](http://upload-images.jianshu.io/upload_images/5308475-769a382b6c9ada3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 修改`next/source/css/_common/components/post/post.styl`文件，在最后一行增加代码：
+
 ```
 @import "my-post-copyright"
 ```
@@ -703,14 +725,14 @@ post_wordcount:
 
 
 >**小技巧**：如果你觉得每次都要输入`copyright: true`很麻烦的话,那么在`/scaffolds/post.md`文件中添加：
-![](http://upload-images.jianshu.io/upload_images/5308475-51f087ce1f1903a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-这样每次`hexo new "你的内容"`之后，生成的md文件会自动把`copyright: `加到里面去
-(**注意**：如果解析出来之后，你的原始链接有问题：如：`http://yoursite.com/前端小项目：使用canvas绘画哆啦A梦.html`,那么在根目录下`_config.yml`中写成类似这样：）
-![](http://upload-images.jianshu.io/upload_images/5308475-980129b36907d103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)就行了。
+>![](http://upload-images.jianshu.io/upload_images/5308475-51f087ce1f1903a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>这样每次`hexo new "你的内容"`之后，生成的md文件会自动把`copyright: `加到里面去
+>(**注意**：如果解析出来之后，你的原始链接有问题：如：`http://yoursite.com/前端小项目：使用canvas绘画哆啦A梦.html`,那么在根目录下`_config.yml`中写成类似这样：）
+>![](http://upload-images.jianshu.io/upload_images/5308475-980129b36907d103.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)就行了。
 
 ---
 
-# 21. 添加网易云跟帖(跟帖关闭，已失效)
+# 21. 添加网易云跟帖(跟帖关闭，已失效，改为来必力)
 
 **实现效果图**
 
@@ -719,11 +741,13 @@ post_wordcount:
 **具体方法实现**
 有两种实现方法：
 ①更新next主题，因为最新版本的主题已经支持这种评论。直接在主题配置文件`_config.yml` 文件中添加如下配置:
+
 ```
 gentie_productKey: #your-gentie-product-key
 ```
 ②如果你不想更新的话，那么按下面步骤进行：
 首先，还是在主题配置文件`_config.yml` 文件中添加如下配置:
+
 ```
 gentie_productKey: #your-gentie-product-key
 ```
@@ -731,6 +755,7 @@ gentie_productKey: #your-gentie-product-key
 ![](http://upload-images.jianshu.io/upload_images/5308475-2d1eeef55db50cfc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 然后在在` layout/_scripts/third-party/comments/` 目录中添加 `gentie.swig`，文件内容如下：
+
 ```
 {% if not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname and not theme.disqus_shortname and not theme.hypercomments_id %}
   {% if theme.gentie_productKey %}
@@ -748,11 +773,12 @@ gentie_productKey: #your-gentie-product-key
 {% endif %}
 ```
 然后在`layout/_scripts/third-party/comments.swig`文件中追加：
-```
-{% include './comments/gentie.swig' %}
 
 ```
+{% include './comments/gentie.swig' %}
+```
 最后，在 `layout/_partials/comments.swig` 文件中条件最后追加网易云跟帖插件引用的判断逻辑：
+
 ```
 {% elseif theme.gentie_productKey %}
       <div id="cloud-tie-wrapper" class="cloud-tie-wrapper">
@@ -764,6 +790,57 @@ gentie_productKey: #your-gentie-product-key
 可能你`hexo s`时可能看不到，直接`hexo d`就可以看到了
 
 
+
+---
+>近日，我朋友发来消息，说网易云跟帖要关了，我网上查了一下，果然如此
+
+![](https://ws3.sinaimg.cn/large/006tKfTcly1fhdq9vii8pj310k0iqjse.jpg)
+
+>😭都是泪,上次用了多说，结果多说关了，接着是网易云跟帖😷，这次直接用国外的来必力，应该不会这么容易关吧😏
+
+方法其实还是跟上面差不多的
+
+首先在 `_config.yml` 文件中添加如下配置：(**注意！如果主题是最新版的，直接写你的liver_uid就行了**)
+
+```
+# Support for LiveRe comments system.
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: your uid
+```
+其中，`livere_uid `就是画红线的部分
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fhdqgyeu2fj30ms02yglr.jpg)
+
+然后在 `layout/_scripts/third-party/comments/` 目录中添加 livere.swig，文件内容如下：
+
+```
+{% if not (theme.duoshuo and theme.duoshuo.shortname) and not theme.duoshuo_shortname and not theme.disqus_shortname and not theme.hypercomments_id and not theme.gentie_productKey %}
+  {% if theme.livere_uid %}
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  {% endif %}
+{% endif %}
+```
+然后在 `layout/_scripts/third-party/comments.swig `文件中追加：
+
+```
+{% include './comments/livere.swig' %}
+```
+最后，在 `layout/_partials/comments.swig` 文件中条件最后追加 LiveRe 插件是否引用的判断逻辑：
+
+```
+{% elseif theme.livere_uid %}
+      <div id="lv-container" data-id="city" data-uid="{{ theme.livere_uid }}"></div>
+{% endif %}
+```
+完
 
 ---
 
@@ -828,6 +905,7 @@ gentie_productKey: #your-gentie-product-key
 
 # 26. 博文置顶
 修改 `hero-generator-index` 插件，把文件：`node_modules/hexo-generator-index/lib/generator.js` 内的代码替换为：
+
 ```
 'use strict';
 var pagination = require('hexo-pagination');
@@ -859,6 +937,7 @@ module.exports = function(locals){
 };
 ```
 在文章中添加 `top` 值，数值越大文章越靠前，如
+
 ```
 ---
 title: 解决Charles乱码问题
@@ -876,6 +955,7 @@ top: 100
 # 27. 修改字体大小
 
 打开`\themes\next\source\css\ _variables\base.styl`文件，将`$font-size-base`改成`16px`，如下所示：
+
 ```
 $font-size-base            =16px
 ```
@@ -885,6 +965,7 @@ $font-size-base            =16px
 # 28. 修改打赏字体不闪动
 
 修改文件`next/source/css/_common/components/post/post-reward.styl`，然后注释其中的函数`wechat:hover`和`alipay:hover`，如下：
+
 ```
 /* 注释文字闪动函数
  #wechat:hover p{
@@ -904,6 +985,7 @@ $font-size-base            =16px
 
 # 29. 侧边栏推荐阅读
 今天有位网友问推荐阅读是怎么弄，其实挺简单的，打开主题配置文件修改成这样就行了(links里面写你想要的链接):
+
 ```
 # Blogrolls
 links_title: 推荐阅读
@@ -918,6 +1000,93 @@ links:
   google前端开发基础: http://wf.uisdc.com/cn/
   
 ```
+
+# 30. 自定义鼠标样式
+打开`themes/next/source/css/_custom/custom.styl`,在里面写下如下代码
+
+```
+// 鼠标样式
+  * {
+      cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"),auto!important
+  }
+  :active {
+      cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"),auto!important
+  }
+```
+其中 url 里面必须是 ico 图片，ico 图片可以上传到网上（我是使用七牛云图床），然后获取外链，复制到 url 里就行了
+
+---
+
+# 31.为博客加上萌萌的宠物
+
+**实现效果图**
+![](http://ohggtqwxx.bkt.clouddn.com/15006365382590.jpg)
+
+**具体实现方法**
+在终端切换到你的博客的路径里，然后输入如下代码：
+
+```
+npm install -save hexo-helper-live2d
+```
+
+然后打开`Hexo/blog/themes/next/layout`
+的`_layout.swig`,将下面代码放到`</body>`之前：
+
+```
+{{ live2d() }}
+```
+
+然后在在 `hexo` 的 `_config.yml `中添加参数：
+
+```
+live2d:
+  model: wanko
+  bottom: -30
+```
+然后hexo clean ，hexo g ，hexo d 就可以看到了。
+
+**下面是一些model，可以换不同的宠物**
+
+*  model 模型名称 默认值: z16
+    * Gantzert_Felixander
+    * Epsilon2.1
+    * haru
+    * miku
+    * ni-j
+    * nico
+    * nito
+    * nipsilon
+    * nietzsche
+    * shizuku
+    * tsumiki
+    * wanko
+    * z16
+    * hibiki
+    * koharu
+    * haruto
+    * Unitychan
+    * tororo
+    * hijiki
+* width 宽度 默认值: 150
+* height 高度 默认值： 300
+* className `<canvas> `元素的类名 默认值： live2d
+* id `<canvas>` 元素的id 默认值： live2dcanvas
+* bottom `<canvas>` 元素的底部偏移 默认值： -20 如果嫌模型位置不正确 可以调整这个参数
+
+
+**用这个有缺点，如果是在手机上看的话，感觉不是很好，宠物一直挡着文字😂😂，还有就是加载有点慢**
+![](http://ohggtqwxx.bkt.clouddn.com/15006388832427.jpg)
+
+
+>注意！如果你在 hexo d 的时候出现我下面这个问题
+![](https://ws2.sinaimg.cn/large/006tKfTcly1fhrqw92685j31dk0q4grl.jpg)
+你可以这样，首先删除hexo 下面的.deploy_git文件夹，然后运行
+
+```
+git config --global core.autocrlf false
+```
+>重新 hexo clean,hexo g,hexo d就行了
+
 
 ---
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2017-08-30T14:14:29.000Z</updated>
+  <updated>2017-09-13T12:51:02.000Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -14,6 +14,446 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端小项目之在线便利贴</title>
+    <link href="http://www.shenzekun.cn/%E5%89%8D%E7%AB%AF%E5%B0%8F%E9%A1%B9%E7%9B%AE%E4%B9%8B%E5%9C%A8%E7%BA%BF%E4%BE%BF%E5%88%A9%E8%B4%B4.html"/>
+    <id>http://www.shenzekun.cn/前端小项目之在线便利贴.html</id>
+    <published>2017-09-13T12:48:33.000Z</published>
+    <updated>2017-09-13T12:51:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr>
+<h2 id="实现的效果如下："><a href="#实现的效果如下：" class="headerlink" title="实现的效果如下："></a>实现的效果如下：</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fjhulxqhxuj31kw0j976o.jpg" alt=""></p>
+<p>界面可能不是太好看😁，考虑到容器的高度会被拉长，因此没有用图片做背景。</p>
+<h2 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h2><p><a href="http://note.shenzekun.cn" target="_blank" rel="external">便利贴</a></p>
+<a id="more"></a>
+<h2 id="涉及的知识点"><a href="#涉及的知识点" class="headerlink" title="涉及的知识点"></a>涉及的知识点</h2><ul>
+<li><code>sass</code>(css 预编译器)</li>
+<li><code>webpack</code>（自动化构建工具，实现LESS,CSS,JS编译和压缩代码）</li>
+<li><code>express</code> (基于 Node.js 平台的 web 开发框架)</li>
+<li><code>html+css</code></li>
+<li><code>Node.js</code>(基于 Chrome V8 引擎的 JavaScript 运行环境)</li>
+<li><code>jQuery</code>(一个快速、简洁的JavaScript框架)</li>
+<li><code>sequelize</code>(Node的ORM框架Sequelize操作数据库)</li>
+<li><code>passport</code>(实现第三方登录)</li>
+</ul>
+<h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ul>
+<li>github第三方登录</li>
+<li>添加笔记（登录成功后）</li>
+<li>删除笔记</li>
+<li>修改笔记</li>
+<li>使用 markdown(类似 typroa)</li>
+<li>笔记拖拽</li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><strong>必要条件</strong>：已经安装好了node环境,还没安装的可以去<a href="http://nodejs.cn/download/" target="_blank" rel="external">node</a>中文官网下载</li>
+<li><p><strong>小提示</strong>：如果用 npm 下载感觉慢的话，可以下载一个切换镜像源的工具<code>nrm</code>,在终端输入：</p>
+  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="selector-tag">i</span> nrm -g</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>然后如下操作：
+![](https://ws1.sinaimg.cn/large/006tKfTcly1fjhuypg0s6j31co0v6439.jpg)
+</code></pre><p>   <strong>开始！！</strong></p>
+<ol>
+<li><p><strong>新建一个文件夹，名字自己起，打开终端，切换到自己新建文件夹，如</strong>：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> (文件夹名称)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><strong>生成 <code>package.json</code></strong></li>
+</ol>
+<pre><code><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> init -y</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><strong>安装 express</strong></li>
+</ol>
+<pre><code><figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i <span class="built_in">express</span> --<span class="built_in">save</span></div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p><strong>安装 <a href="http://www.expressjs.com.cn/starter/generator.html" target="_blank" rel="external">express生成器</a>:</strong></p>
+ <figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install <span class="built_in">express</span>-generator --<span class="built_in">save</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p><strong>生成 ejs 模板（类似 jsp 的写法）</strong></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">express <span class="_">-f</span> <span class="_">-e</span></div><div class="line">npm i</div></pre></td></tr></table></figure>
+<p> <img src="https://ws3.sinaimg.cn/large/006tKfTcly1fjhv8g9apcj30au0cqq30.jpg" alt=""><br>  其中<code>public</code>用来存放编译后的js文件以及编译好的css文件等，<code>routes</code>用来存放处理 ajax 的请求文件，views就是存放视图文件<br>然后新建 database 和 src：<br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fji1acleqhj30ba0k0mxg.jpg" alt=""><br>其中 src/js 里面 app 代表不同页面的入口文件，lib 就是一些常用的库，mod 就是你写的一些模块，database 用来存放数据库数据的</p>
+</li>
+<li><p><strong>输入：</strong></p>
+</li>
+</ol>
+<pre><code><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    npm start</div><div class="line">    ``` </div><div class="line">如果有出现下面的错误：</div><div class="line">![](https:<span class="comment">//ws3.sinaimg.cn/large/006tKfTcly1fjhvfxr6p3j319i0qq42h.jpg)</span></div><div class="line">出现这个错误是因为你没有下载模块，只需在终端输入：</div></pre></td></tr></table></figure>
+
+npm i (模块名) --save
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">就可以了    </div><div class="line"></div><div class="line"><span class="bullet">7. </span><span class="strong">**打开浏览器，输入`localhost:3000`**</span></div><div class="line"></div><div class="line"><span class="code">    出现下面这样就说明成功了：</span></div><div class="line"></div><div class="line"><span class="code">    ![](https://ws2.sinaimg.cn/large/006tKfTcly1fjhvj4lwtgj316a0cgjrb.jpg)</span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="bullet">8. </span><span class="strong">**接下来安装webpack和相关依赖**</span></div></pre></td></tr></table></figure>
+
+npm i webpack --save-dev
+npm i --save css-loader style-loader express-session express-flash node-sass passport sass sass-loader sequelize sqlite3 extract-text-webpack-plugin onchange
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line"><span class="number">9</span>. **在 src 里建一个 webpack<span class="selector-class">.config</span><span class="selector-class">.js</span>，配置如下**：</div></pre></td></tr></table></figure>
+
+var webpack = require(&apos;webpack&apos;);
+var path = require(&apos;path&apos;);
+var ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;)
+var autoprefixer = require(&apos;autoprefixer&apos;);
+
+module.exports = {
+    entry: path.join(__dirname, &quot;js/app/index&quot;),
+    output: {
+        path: path.join(__dirname, &quot;../public&quot;),
+        filename: &quot;js/index.js&quot;
+    },
+    module: {
+        rules: [{
+            test: /(\.scss)$/,
+            use: ExtractTextPlugin.extract({
+                fallback: &quot;style-loader&quot;,
+                use: [&quot;css-loader&quot;, &quot;sass-loader&quot;]
+            }) //把 css 抽离出来生成一个文件
+        }]
+    },
+    resolve: {
+        alias: {
+            jquery: path.join(__dirname, &quot;js/lib/jquery-2.0.3.min.js&quot;),
+            mod: path.join(__dirname, &quot;js/mod&quot;),
+            sass: path.join(__dirname, &quot;sass&quot;)
+        }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: &quot;jquery&quot;
+        }),
+        new ExtractTextPlugin(&quot;css/index.css&quot;),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                css: [
+                    autoprefixer(),
+                ]
+            }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
+}
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    说明</span></div><div class="line"> * entry:入口文件，也就是 src/js/app里面的index.js,其中__dirname是获得当前文件所在目录的完整目录名</div><div class="line"> * output:输出编译后的文件 index.js，输出到 public/js 里面</div><div class="line"> * module：配置Loaders，通过使用不同的loader，webpack有能力调用外部的脚本或工具，实现对不同格式的文件的处理，比如说分析转换scss为css，或者把下一代的JS文件</div><div class="line"> * resolve.alias：设置模块别名，便于我们更方便引用，比如说我在 js里面的文件需要 jquery，在里面的文件直接写 require("jquery") 就行了</div><div class="line"> * 如果所有文件都需要 jquery,那么直接在 plugins里面写成这样：</div><div class="line"><span class="code">    ![](https://ws1.sinaimg.cn/large/006tKfTcly1fji3f1ap39j30ik03cglh.jpg)</span></div><div class="line"><span class="code">    就不需要 require 了</span></div><div class="line"><span class="code">     ![](https://ws3.sinaimg.cn/large/006tKfTcly1fji3x6gw2oj30i005q748.jpg)这个是压缩文件的</span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="bullet">10. </span><span class="strong">**在 package.json 中，增加如下两条：**</span></div><div class="line"></div><div class="line"><span class="code">    ![](https://ws2.sinaimg.cn/large/006tKfTcly1fji3q8xe7tj310i068js2.jpg)</span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    写成这样，你在终端就可以写成`npm run webpack` 来编译文件，</span></div><div class="line"><span class="code">`npm run watch`</span>来监控 src 里面的 js 和 scss 的变化，只要一修改，进行编译，提高了效率</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="bullet">11.  </span><span class="strong">**测试**</span></div><div class="line"></div><div class="line">你可以试试在 js 里面的 index.js写点东西，然后 npm run webpack，如果终端显示是这样：</div><div class="line"><span class="code">    ![](https://ws4.sinaimg.cn/large/006tKfTcly1fji43t9rgej31b20ug0y0.jpg)</span></div><div class="line"><span class="code">    就证明成功了</span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    </span></div><div class="line"></div><div class="line"></div><div class="line"><span class="section">## 项目思路</span></div><div class="line"></div><div class="line">逻辑比较简单</div><div class="line"></div><div class="line"><span class="bullet">1. </span>首先用户必须登录才能添加笔记，当用户失焦的时候，将数据插入数据库，并且重新布局（瀑布流）</div><div class="line"><span class="bullet">2. </span>用户不能更改其他用户的笔记，除了管理员😄</div><div class="line"><span class="bullet">3. </span>用户更新笔记之后，数据库的数据重新更新，重新布局</div><div class="line"><span class="bullet">4. </span>用户可以删除笔记，数据从数据库中删除，重新布局</div><div class="line"><span class="bullet">5. </span>用户可以拖拽笔记，但不将位置存入数据库</div><div class="line"></div><div class="line"></div><div class="line"><span class="section">## 实现</span></div><div class="line">html,css就不讲了，可以看看我的[<span class="string">源码</span>](<span class="link">https://github.com/shenzekun/sticky-note</span>),主要讲 js。</div><div class="line"></div><div class="line"><span class="bullet">1. </span><span class="strong">**瀑布流的实现**</span></div><div class="line"></div><div class="line"><span class="code">    思路：（前提是必须绝对定位）</span></div><div class="line"><span class="code">    &gt;1. 获取元素的宽度</span></div><div class="line"><span class="code">    &gt;2. 通过窗口的宽度除以元素的宽度来获取列数</span></div><div class="line"><span class="code">    &gt;3. 初始化一个数组来获取每列的高度，初始化每列的高度为0</span></div><div class="line"><span class="code">    &gt;4. 遍历元素，获取最小的的列数的高度和索引，对当前元素进行定位，列数高度加等于当前元素的高度</span></div><div class="line"><span class="code">    </span></div><div class="line"><span class="code">    知道思路后，代码很快就写出来了：</span></div></pre></td></tr></table></figure>
+
+var WaterFall = (function () {
+    var $ct, $items;
+    function render($c) {
+        $ct = $c;
+        $items = $ct.children();
+        var nodeWidth = $items.outerWidth(true),
+            windowHeight = $(window).height(),
+            colNum = parseInt($(window).width() / nodeWidth), //获取列数
+            colSumHeight = []; //获取每列的高度
+        //对每列的高度进行初始化
+        for (var i = 0; i &lt; colNum; i++) {
+            colSumHeight[i] = 0;
+        }
+        $items.each(function () {
+            var $current = $(this);
+            var index = 0,
+                minSumHeight = colSumHeight[0];
+            //获取最小的的列数的高度和索引
+            for (var i = 0; i &lt; colSumHeight.length; i++) {
+                if (minSumHeight &gt; colSumHeight[i]) {
+                    index = i;
+                    minSumHeight = colSumHeight[i];
+                }
+            }            
+            //改变窗口高度
+            if (windowHeight &lt; minSumHeight) {
+                $(&quot;body&quot;).height(minSumHeight);
+            } else {
+                $(&quot;body&quot;).height(windowHeight - 72);
+            }
+            //对当前元素进行定位
+            $current.animate({
+                left: nodeWidth * index,
+                top: minSumHeight
+            }, 5);
+            colSumHeight[index] += $current.outerHeight(true);
+
+        });
+    }
+    //当窗口发生变化时，重新渲染
+    $(window).on(&apos;resize&apos;, function () {
+        render($ct);
+    });
+    return {
+        init: render
+    }
+})();
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    </div><div class="line"><span class="selector-tag">2</span>. 笔记的拖拽</div><div class="line">    </div><div class="line">    我们先看个图</div><div class="line">    !<span class="selector-attr">[]</span>(<span class="attribute">https</span>:<span class="comment">//ws1.sinaimg.cn/large/006tKfTcly1fji626ceeuj30r40p8t96.jpg)</span></div><div class="line">    </div><div class="line">    因此代码如下：</div></pre></td></tr></table></figure>
+
+  //设置笔记的移动
+        $noteHead.on(&apos;mousedown&apos;, function (e) {
+            var evtX = e.pageX - $note.offset().left, //evtX 计算事件的触发点在 dialog内部到 dialog 的左边缘的距离
+                evtY = e.pageY - $note.offset().top;
+            $note.addClass(&apos;draggable&apos;).data(&apos;evtPos&apos;, {
+                x: evtX,
+                y: evtY
+            }); //把事件到 dialog 边缘的距离保存下来
+        }).on(&apos;mouseup&apos;, function () {
+            $note.removeClass(&apos;draggable&apos;).removeData(&apos;pos&apos;);
+        });
+
+        $(&apos;body&apos;).on(&apos;mousemove&apos;, function (e) {
+            $(&apos;.draggable&apos;).length &amp;&amp; $(&apos;.draggable&apos;).offset({
+                top: e.pageY - $(&apos;.draggable&apos;).data(&apos;evtPos&apos;).y, // 当用户鼠标移动时，根据鼠标的位置和前面保存的距离，计算 dialog 的绝对位置
+                left: e.pageX - $(&apos;.draggable&apos;).data(&apos;evtPos&apos;).x
+            });
+        });
+    },
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">3. </span>提示模块</div><div class="line"></div><div class="line"></div><div class="line"><span class="code">    这个比较容易：</span></div></pre></td></tr></table></figure>
+
+/* 
+提示模块
+参数：状态(1表示成功，0表示失败)，消息，出现时间(不写默认是1s)
+ */
+function toast(status, msg, time) {
+    this.status = status;
+    this.msg = msg;
+    this.time = time || 1000;
+    this.createToast();
+    this.showToast();
+}
+
+toast.prototype = {
+    createToast: function () {
+        if (this.status === 1) {
+            var html = &apos;&lt;div class=&quot;toast&quot;&gt;&lt;img src=&quot;../../imgs/1.png&quot; class=&quot;toast_icon&quot;&gt;&lt;/img&gt;&lt;span class=&quot;toast_word&quot;&gt;&apos; + this.msg + &apos;&lt;/span&gt;&lt;/div&gt;&apos;;
+            this.$toast = $(html);
+            $(&apos;body&apos;).append(this.$toast);
+        } else {
+            var html = &apos;&lt;div class=&quot;toast&quot;&gt;&lt;img src=&quot;../../imgs/0.png&quot; class=&quot;toast_icon&quot;&gt;&lt;/img&gt;&lt;span class=&quot;toast_word&quot;&gt;&apos; + this.msg + &apos;&lt;/span&gt;&lt;/div&gt;&apos;;
+            this.$toast = $(html);
+            $(&apos;body&apos;).append(this.$toast);
+        }
+    },
+    showToast: function () {
+        var _this = this;
+        this.$toast.fadeIn(300, function () {
+            setTimeout(function () {
+                _this.$toast.fadeOut(300, function () {
+                    _this.$toast.remove();
+                });
+            }, _this.time);
+        })
+    }
+}
+
+function Toast(status, msg, time) {
+    return new toast(status, msg, time);
+}
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">4.</span> 笔记模块</div><div class="line"></div><div class="line">思路：</div><div class="line">&gt;<span class="number">1.</span> 初始化（如 id，username 等等）</div><div class="line">&gt;<span class="number">2.</span> 创建节点</div><div class="line">&gt;<span class="number">3.</span> 设置颜色</div><div class="line">&gt;<span class="number">4.</span> 绑定事件</div></pre></td></tr></table></figure>
+</code></pre><p>function Note(opts) {<br>    this.initOpts(opts);<br>    this.createNode();<br>    this.setColor();<br>    this.bind();<br>}</p>
+<p>Note.prototype = {<br>    colors: [<br>        [‘#ea9b35’, ‘#efb04e’], // headColor, containerColor<br>        [‘#dd598b’, ‘#e672a2’],<br>        [‘#c24226’, ‘#d15a39’],<br>        [‘#c1c341’, ‘#d0d25c’],<br>        [‘#3f78c3’, ‘#5591d2’]<br>    ],<br>    defaultOpts: {<br>        id: ‘’, //Note的 id<br>        $ct: $(‘#content’).length &gt; 0 ? $(‘#content’) : $(‘body’), //默认存放 Note 的容器<br>        context: ‘请输入内容’, //Note 的内容<br>        createTime: new Date().toLocaleDateString().replace(/\//g, ‘-‘).match(/^\d{4}-\d{1,2}-\d{1,2}/),<br>        username: ‘admin’<br>    },<br>    initOpts: function (opts) {<br>        this.opts = $.extend({}, this.defaultOpts, opts || {});<br>        if (this.opts.id) {<br>            this.id = this.opts.id;<br>        }<br>        this.createTime = this.opts.createTime ? this.opts.createTime : new Date().toLocaleDateString().replace(/\//g, ‘-‘).match(/^\d{4}-\d{1,2}-\d{1,2}/);<br>        this.username = this.opts.username ? this.opts.username : ‘admin’<br>    },<br>    createNode: function () {<br>        var tpl = ‘<div class="note">‘ +<br>            ‘<div class="note-head"><span class="delete">&times;</span></div>‘ +<br>            ‘<div class="note-ct" contenteditable="true"></div>‘ +<br>            ‘<div class="note-info"><div class="note-name">‘ + this.username + ‘</div><div class="note-time">‘ + this.createTime + ‘</div>‘ +<br>            ‘</div>‘;<br>        this.$note = $(tpl);<br>        this.$note.find(‘.note-ct’).html(this.opts.context);<br>        this.opts.$ct.append(this.$note);<br>        //if (!this.id) this.$note.css(‘bottom’, ‘10px’); //新增放到右边<br>        Event.fire(‘waterfall’);<br>    },</div></p>
+<pre><code>setColor: function () {
+    var color = this.colors[Math.floor(Math.random() * 5)];
+    this.$note.find(&quot;.note-head&quot;).css(&apos;background-color&apos;, color[0]);
+    this.$note.find(&apos;.note-ct&apos;).css(&apos;background-color&apos;, color[1]);
+    this.$note.find(&apos;.note-info&apos;).css(&apos;background-color&apos;, color[1]);
+},
+setLayout: function () {
+    var self = this;
+    if (self.clock) {
+        clearTimeout(self.clock);
+    }
+    self.clock = setTimeout(function () {
+        Event.fire(&apos;waterfall&apos;);
+    }, 100);
+},
+bind: function () {
+    var _this = this, //记录下坑，之前末尾是分号不是逗号后面都变成了全局变量结果造成了最后一个才能修改😂
+        $note = this.$note,
+        $noteHead = $note.find(&apos;.note-head&apos;),
+        $noteCt = $note.find(&apos;.note-ct&apos;),
+        $close = $note.find(&apos;.delete&apos;);
+
+    $close.on(&apos;click&apos;, function () {
+        _this.delete();
+    });
+
+    $noteCt.on(&apos;focus&apos;, function () {
+        if ($noteCt.html() === &apos;请输入内容&apos;) $noteCt.html(&apos;&apos;);
+        $noteCt.data(&apos;before&apos;, $noteCt.html());
+    }).on(&apos;blur paste&apos;, function () {
+        if ($noteCt.data(&apos;before&apos;) != $noteCt.html()) {
+            $noteCt.data(&apos;before&apos;, $noteCt.html());
+            _this.setLayout();
+            if (_this.id) { //判断是否有这个id，如果有就更新，如果没有就添加
+                _this.edit($noteCt.html())
+            } else {
+                _this.add($noteCt.html())
+            }
+        }
+    });
+
+    //设置笔记的移动
+    $noteHead.on(&apos;mousedown&apos;, function (e) {
+        var evtX = e.pageX - $note.offset().left, //evtX 计算事件的触发点在 dialog内部到 dialog 的左边缘的距离
+            evtY = e.pageY - $note.offset().top;
+        $note.addClass(&apos;draggable&apos;).data(&apos;evtPos&apos;, {
+            x: evtX,
+            y: evtY
+        }); //把事件到 dialog 边缘的距离保存下来
+    }).on(&apos;mouseup&apos;, function () {
+        $note.removeClass(&apos;draggable&apos;).removeData(&apos;pos&apos;);
+    });
+
+    $(&apos;body&apos;).on(&apos;mousemove&apos;, function (e) {
+        $(&apos;.draggable&apos;).length &amp;&amp; $(&apos;.draggable&apos;).offset({
+            top: e.pageY - $(&apos;.draggable&apos;).data(&apos;evtPos&apos;).y, // 当用户鼠标移动时，根据鼠标的位置和前面保存的距离，计算 dialog 的绝对位置
+            left: e.pageX - $(&apos;.draggable&apos;).data(&apos;evtPos&apos;).x
+        });
+    });
+},
+
+
+
+
+
+/* 添加笔记到数据库 */
+add: function (msg) {
+    var _this = this;
+    $.post(&apos;/api/notes/add&apos;, {
+        note: msg
+    }).done(function (res) {
+        if (res.status === 1) {
+            _this.id = res.id;
+            Toast(1, &apos;添加成功！&apos;);
+        } else {
+            _this.$note.remove();
+            Event.fire(&apos;waterfall&apos;);
+            Toast(0, res.errorMsg);
+        }
+    })
+},
+/* 编辑笔记数据库 */
+edit: function (msg) {
+    var _this = this;
+    $.post(&apos;/api/notes/edit&apos;, {
+        id: this.id,
+        note: msg
+    }).done(function (res) {
+        if (res.status === 1) {
+            Toast(1, &apos;更新成功！&apos;);
+        } else {
+            Toast(0, res.errorMsg);
+        }
+    });
+},
+/* 删除笔记 */
+delete: function () {
+    var _this = this;
+    if (confirm(&quot;确认要删除吗？&quot;)) {
+        $.post(&apos;/api/notes/delete&apos;, {
+            id: this.id
+        }).done(function (res) {
+            if (res.status === 1) {
+                Toast(1, &apos;删除成功！&apos;);
+                _this.$note.remove();
+                Event.fire(&apos;waterfall&apos;)
+            } else {
+                Toast(0, res.errorMsg);
+            }
+        });
+    }
+}
+</code></pre><p>}</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">5.</span>笔记管理模块</div></pre></td></tr></table></figure>
+<p>var NoteManager = (function () {<br>    //页面加载<br>    function load() {<br>        $.get(‘api/notes’).done(function (res) {<br>            if (res.status === 1) {<br>                $.each(res.data, function (index, msg) {<br>                    new Note({<br>                        id: msg.id,<br>                        context: msg.text,<br>                        createTime: msg.createdAt.match(/^\d{4}-\d{1,2}-\d{1,2}/),<br>                        username: msg.username<br>                    });<br>                });</p>
+<pre><code>            Event.fire(&apos;waterfall&apos;);
+
+        } else {
+            Toast(0, res.errorMsg);
+        }
+    }).fail(function () {
+        Toast(0, &quot;网络异常&quot;);
+    });
+}
+
+/* 添加笔记 */
+function add() {
+    $.get(&apos;/login&apos;).then(function (res) {//判断是否登录
+        if (res.status === 1) {
+            new Note({
+                username: res.username
+            });
+        } else {
+            Toast(0, res.errorMsg);
+        }
+    });
+}
+return {
+    load: load,
+    add: add
+}
+</code></pre><p>})();<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">6.</span>发布订阅模式</div></pre></td></tr></table></figure></p>
+<p>/<em> 发布订阅模式 </em>/<br>var Event = (function () {<br>    var events = {};</p>
+<pre><code>function on(evt, handler) {
+    events[evt] = events[evt] || [];
+    events[evt].push({
+        handler: handler
+    });
+}
+
+function fire(evt, args) {
+    if (!events[evt]) {
+        return;
+    }
+    for (var i = 0; i &lt; events[evt].length; i++) {
+        events[evt][i].handler(args);
+    }
+}
+
+function off(name) {
+    delete events[name];
+}
+return {
+    on: on,
+    fire: fire,
+    off: off
+}
+</code></pre><p>})();<br><figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">写完模块后，写入口文件<span class="keyword">index</span>.js</div></pre></td></tr></table></figure></p>
+<p>require(‘sass/index.scss’);<br>var Toast = require(‘mod/toast.js’).Toast;<br>var WaterFall = require(‘mod/waterfall.js’);<br>var NoteManager = require(‘mod/note-manager’);<br>var Event = require(‘mod/event.js’);</p>
+<p>NoteManager.load();<br>$(‘.add-note’).on(‘click’, function () {<br>    NoteManager.add();<br>})</p>
+<p>Event.on(‘waterfall’, function () {<br>    WaterFall.init($(“#content”));<br>})<br><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">到这就差不多完成了<span class="number">70</span><span class="comment">%了，接下来就创建数据库，连接数据库了</span></div></pre></td></tr></table></figure></p>
+<p>/<em>创建数据库 运行 node note.js</em>/</p>
+<p>var Sequelize = require(‘sequelize’);<br>var path = require(‘path’);</p>
+<p>var sequelize = new Sequelize(undefined, undefined, undefined, {<br>    host: ‘localhost’,<br>    dialect: ‘sqlite’,<br>    // SQLite only<br>    storage: path.join(__dirname, ‘../database/database.sqlite’)<br>});</p>
+<p>/* 测试连接是否成功<br>node note.js</p>
+<p>sequelize.authenticate()<br>    .then(() =&gt; {<br>        console.log(‘Connection has been established successfully.’);<br>    })<br>    .catch(err =&gt; {<br>        console.error(‘Unable to connect to the database:’, err);<br>    });</p>
+<p>*/</p>
+<p>var Note = sequelize.define(‘note’, {<br>    text: {<br>        type: Sequelize.STRING<br>    },<br>    userid: {<br>        type: Sequelize.INTEGER<br>    },<br>    username: {<br>        type: Sequelize.STRING<br>    }<br>});</p>
+<p>Note.sync();</p>
+<p>/<em><br>删除表<br>Note.drop();
+</em>/</p>
+<p>/*<br>//创建数据库</p>
+<p>Note.sync().then(function(){<br>     Note.create({text:”sdsdsdsd”});<br>}).then(function(){<br>    //查询表<br>    Note.findAll({raw:true}).then(function(notes){<br>        console.log(notes);<br>    })<br>});<br>*/</p>
+<p>module.exports = Note;<br>```</p>
+<p>然后是在routes 里处理 ajax 请求，处理登录信息，获取 id，用户名等等，到这就基本完成了</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经过一星期的开发，了解了前后端联调，模块化开发方式、webpack 及loader和插件的使用、npm 的使用，Express的使用、路由、中间件、sqlite3、nodejs，在开发过程中还是有遇到许多问题，例如在连续声明变量的时候，不小心把逗号写成了分号，其他变量就变成了全局变量，于是就出错了，查了好久😂<br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fji7u6i1v0j30jm06y0t6.jpg" alt=""><br>不过在这过程之中还是学到了许多，重要的是过程，继续往前端的路走下去😄</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h2 id=&quot;实现的效果如下：&quot;&gt;&lt;a href=&quot;#实现的效果如下：&quot; class=&quot;headerlink&quot; title=&quot;实现的效果如下：&quot;&gt;&lt;/a&gt;实现的效果如下：&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://ws3.sinaimg.cn/large/006tKfTcly1fjhulxqhxuj31kw0j976o.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;界面可能不是太好看😁，考虑到容器的高度会被拉长，因此没有用图片做背景。&lt;/p&gt;
+&lt;h2 id=&quot;预览&quot;&gt;&lt;a href=&quot;#预览&quot; class=&quot;headerlink&quot; title=&quot;预览&quot;&gt;&lt;/a&gt;预览&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://note.shenzekun.cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;便利贴&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
+    
+      <category term="js" scheme="http://www.shenzekun.cn/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>解决inline-block元素的bug</title>
@@ -387,7 +827,7 @@
 <p>然后在<code>layout/_scripts/third-party/comments.swig</code>文件中追加：</p>
 <figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">include</span></span> './comments/gentie.swig' %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
 <p>最后，在 <code>layout/_partials/comments.swig</code> 文件中条件最后追加网易云跟帖插件引用的判断逻辑：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% elseif theme.gentie_productKey %&#125;</div><div class="line">      &lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"cloud-tie-wrapper"</span> <span class="built_in">class</span>=<span class="string">"cloud-tie-wrapper"</span>&gt;</div><div class="line">      &lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% elseif theme.gentie_productKey %&#125;</div><div class="line">      &lt;div id=<span class="string">"cloud-tie-wrapper"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"cloud-tie-wrapper"</span>&gt;</div><div class="line">      <span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>具体位置如下：<br><img src="http://upload-images.jianshu.io/upload_images/5308475-c9199439d2396989.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>可能你<code>hexo s</code>时可能看不到，直接<code>hexo d</code>就可以看到了</p>
 <hr>
@@ -551,7 +991,7 @@
 <p>首先我们需要创建一个400*600的画布，代码如下:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"doraemon"</span> <span class="attribute">width</span>=<span class="string">"400"</span> height=<span class="string">"600"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure></p>
 <p>接着定义一个div，用来显示坐标<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="built_in">id</span>=<span class="string">"put"</span> style=<span class="string">"width: 50px"</span> height=<span class="string">"20px"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>接着我写了一个显示坐标的函数，可以用来看大概画到哪个点：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function">function <span class="title">zuobiao</span>(<span class="params"><span class="keyword">event</span></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> x = <span class="keyword">event</span>.clientX;</div><div class="line">        <span class="keyword">var</span> y = <span class="keyword">event</span>.clientY;</div><div class="line">        <span class="keyword">var</span> <span class="keyword">out</span> = document.getElementById(<span class="string">"put"</span>);</div><div class="line">        <span class="keyword">out</span>.innerHTML = <span class="string">"x:"</span> + x + <span class="string">" y:"</span> + y;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>然后getContext() 方法返回一个用于在画布上绘图的环境。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cxt = <span class="built_in">document</span>.getElementById(<span class="string">'doraemon'</span>).getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure></p>
+<p>然后getContext() 方法返回一个用于在画布上绘图的环境。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cxt = <span class="built_in">document</span>.getElementById(<span class="string">'doraemon'</span>).getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure></p>
 <p>接着开始画头部:<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cxt.beginPath();<span class="comment">//起始路径</span></div><div class="line">cxt.lineWidth = <span class="number">1</span>;<span class="comment">//线宽度为1</span></div><div class="line">cxt.strokeStyle = '#<span class="number">000</span>';<span class="comment">//笔触的颜色</span></div><div class="line">cxt.arc(<span class="number">200</span>, <span class="number">175</span>, <span class="number">175</span>, <span class="number">0.7</span> * Math.<span class="literal">PI</span>, <span class="number">0.3</span> * Math.<span class="literal">PI</span>);<span class="comment">//绘制弧，中心点（200，175），半径175</span></div><div class="line">cxt.fillStyle = '#<span class="number">0</span>bb0da';<span class="comment">//设置填充时的颜色</span></div><div class="line">cxt.fill();<span class="comment">//填充颜色</span></div><div class="line">cxt.stroke();<span class="comment">//绘制路径</span></div></pre></td></tr></table></figure></p>
 <p>头部如下：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/5308475-14f0c90711c3b8d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="头部"></p>
@@ -1140,7 +1580,7 @@
 <hr>
 <h3 id="方法使用"><a href="#方法使用" class="headerlink" title="方法使用"></a><strong>方法使用</strong></h3><p><strong>我们来看下面一个例子：</strong></p>
 <p>定义一个函数mul</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span><span class="params">(a,b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>+(a*b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mul</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>+(a*b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>接着我们在控制台上打印出</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">console.log(mul.call(null,<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">console.log(mul.call('s',<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">console.log(mul.call(<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>));</div><div class="line">console.log(mul.apply(null,[<span class="number">2</span>,<span class="number">5</span>]));</div><div class="line">console.log(mul.apply(<span class="number">2</span>,[<span class="number">2</span>,<span class="number">5</span>]));</div></pre></td></tr></table></figure>
 <p>分别为：</p>
@@ -1160,7 +1600,7 @@
 </blockquote>
 <p>这样一来就很简洁明了。</p>
 <p><strong>再举一个例子实现对象继承</strong></p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span> </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name=name;</div><div class="line">	<span class="keyword">this</span>.age=age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Student=<span class="function"><span class="keyword">function</span><span class="params">(name,age,gender)</span> </span>&#123;</div><div class="line">	Person.call(<span class="keyword">this</span>,name,age);<span class="comment">//this继承了person的属性和方法</span></div><div class="line">	<span class="keyword">this</span>.gender=gender;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> student=<span class="keyword">new</span> Student(<span class="string">"陈安东"</span>, <span class="number">20</span>, <span class="string">"男"</span>);</div><div class="line">alert(<span class="string">"姓名:"</span>+student.name+<span class="string">"\n"</span>+<span class="string">"年龄:"</span>+student.age+<span class="string">"\n"</span>+<span class="string">"性别:"</span>+student.gender);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name=name;</div><div class="line">	<span class="keyword">this</span>.age=age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Student=<span class="function"><span class="keyword">function</span>(<span class="params">name,age,gender</span>) </span>&#123;</div><div class="line">	Person.call(<span class="keyword">this</span>,name,age);<span class="comment">//this继承了person的属性和方法</span></div><div class="line">	<span class="keyword">this</span>.gender=gender;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> student=<span class="keyword">new</span> Student(<span class="string">"陈安东"</span>, <span class="number">20</span>, <span class="string">"男"</span>);</div><div class="line">alert(<span class="string">"姓名:"</span>+student.name+<span class="string">"\n"</span>+<span class="string">"年龄:"</span>+student.age+<span class="string">"\n"</span>+<span class="string">"性别:"</span>+student.gender);</div></pre></td></tr></table></figure>
 <p>输出</p>
 <blockquote>
 <p>姓名:陈安东<br>年龄:20<br>性别:男</p>
@@ -1340,7 +1780,7 @@
 </blockquote>
 <p>其实挺简单的︿(￣︶￣)︿</p>
 <h3 id="修改-layout-swig"><a href="#修改-layout-swig" class="headerlink" title="修改_layout.swig"></a>修改<code>_layout.swig</code></h3><p>打开  <code>next/layout/_layout.swig</code><br>在 <code>&lt; /body&gt;</code>之前添加代码(注意不要放在&lt; /head&gt;的后面)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% <span class="keyword">if</span> theme.canvas_nest %&#125;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&#123;% endif %&#125;</div></pre></td></tr></table></figure>
 <hr>
 <a id="more"></a>
 <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>打开 <code>/next/_config.yml</code>,在里面添加如下代码：(可以放在最后面)</p>
@@ -1368,7 +1808,7 @@
 &lt;/blockquote&gt;
 &lt;p&gt;其实挺简单的︿(￣︶￣)︿&lt;/p&gt;
 &lt;h3 id=&quot;修改-layout-swig&quot;&gt;&lt;a href=&quot;#修改-layout-swig&quot; class=&quot;headerlink&quot; title=&quot;修改_layout.swig&quot;&gt;&lt;/a&gt;修改&lt;code&gt;_layout.swig&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;打开  &lt;code&gt;next/layout/_layout.swig&lt;/code&gt;&lt;br&gt;在 &lt;code&gt;&amp;lt; /body&amp;gt;&lt;/code&gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面)&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;% &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; theme.canvas_nest %&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;script type=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; src=&lt;span class=&quot;string&quot;&gt;&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&lt;/span&gt;&amp;gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;% endif %&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;% &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; theme.canvas_nest %&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;script type=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt; src=&lt;span class=&quot;string&quot;&gt;&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&lt;/span&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;% endif %&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;hr&gt;
     
     </summary>

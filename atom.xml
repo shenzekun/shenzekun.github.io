@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2017-09-26T23:30:15.000Z</updated>
+  <updated>2017-10-02T07:37:38.000Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 react 总结</title>
+    <link href="http://www.shenzekun.cn/%E4%BD%BF%E7%94%A8-react-%E6%80%BB%E7%BB%93.html"/>
+    <id>http://www.shenzekun.cn/使用-react-总结.html</id>
+    <published>2017-10-02T07:34:31.000Z</published>
+    <updated>2017-10-02T07:37:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<hr><blockquote><p>最近学了一些 react 和es6 的一些知识，并且使用 react 写了一个 TodoList 项目===&gt;<a href="http://shenzekun.cn/R-Todo/build/index.html" target="_blank" rel="external">预览</a> &amp;&amp; <a href="https://github.com/shenzekun/R-Todo" target="_blank" rel="external">源码</a> 感觉学的挺多的，并且遇到的坑也不少😂，说实话，一开始学 react 看到 jsx 语法有点不适应，说好的结构和行为分离呢😁，不过随着通过一个项目的完成，渐渐明白了这么写的好处</p></blockquote><a id="more"></a><h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a><strong>好处</strong></h3><ul><li>自定义标签</li><li>结构清晰</li><li>代码模块化</li><li>更加语义化</li></ul><h3 id="不过也有缺点"><a href="#不过也有缺点" class="headerlink" title="不过也有缺点"></a><strong>不过也有缺点</strong></h3><ul><li>浏览器不支持这语法</li><li>必须通过一大堆工具来转换</li></ul><h3 id="一些需要注意的点"><a href="#一些需要注意的点" class="headerlink" title="一些需要注意的点"></a>一些需要注意的点</h3><p><strong>1. react声明组件时，组件名称必须以大写字母开头如</strong>👉：<code>&lt;Todo /&gt;</code><br><strong>2. 每个标签必须闭合,因为采用的 js+xml 写法，如</strong>👉: <code>&lt;input /&gt;</code><br><strong>3. 组件的返回值只能有一个顶层元素，如</strong>👇：</p><p>下面是错误的：</p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">render () &#123;</div><div class="line">  return (</div><div class="line">    &lt;div&gt;1&lt;/div&gt;</div><div class="line">    &lt;div&gt;2&lt;/div&gt;</div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>必须这样</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">render () &#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  )</div><div class="line">&#125;</div></pre></td></tr></table></figure><p><strong>4. return后面要加一个括号,目的是防止 JavaScript 代码在解析时自动在换行处添加分号</strong>:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> renderSquare(i) &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">          <span class="xml"><span class="tag">&lt;<span class="name">Todo</span> /&gt;</span></span></div><div class="line">        );</div><div class="line">&#125;</div></pre></td></tr></table></figure><p><strong>5. render()里面不能写 class,for,而是要写成<code>className</code>和<code>htmlFor</code>,因为 class ，for 是 javascript 的关键字，因此不能使用，如</strong>：</p><p>下面是错误的</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=“xxx”&gt;</div></pre></td></tr></table></figure><p>而是要写 className：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> className=<span class="string">"xxx"</span>&gt;</div></pre></td></tr></table></figure><p><strong>6. 不要直接更新状态，如</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.state.comment = <span class="string">'Hello'</span>;</div></pre></td></tr></table></figure><p>此代码<strong>不会</strong>重新渲染组件的，之前就这么写，啥反应也没有😂，应该要用<code>setState()</code>:👇</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setState(&#123;<span class="attr">comment</span>: <span class="string">'Hello'</span>&#125;);</div></pre></td></tr></table></figure><p>（<strong>注意！！</strong>：构造函数（constructor）是唯一能够初始化 this.state 的地方。）</p><p><strong>7. 使用<code>style</code></strong></p><p>我们在 html 可以这么写：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"background-color:red;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure><p>但是在 jsx 里面却不能这么写，必须用两个花括号包裹，并且里面不能写<code>-</code>，要用驼峰形式写，如上面的 <code>background-color</code>写成<code>backgroundColor</code>:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&#123;&#123;<span class="attr">backgroundColor</span>: <span class="string">'red'</span>&#125;&#125;&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure><p><strong>8. 关于 setState</strong></p><p>setState方法用于更新当前组件的state状态值，但调用这个方法后，state并不会立即更新，而是在render方法调用后才会更新</p><h3 id="react-特点"><a href="#react-特点" class="headerlink" title="react 特点"></a>react 特点</h3><ol><li><strong>虚拟DOM</strong>: React是以数据驱动的，每次数据变化React都会扫描整个虚拟DOM树，自动计算与上次虚拟DOM的差异变化，然后针对需要变化的部分进行实际的浏览器DOM更新。</li><li><strong>组件化：</strong> React可以从功能角度划分，将UI分解成不同组件，各组件都独立封装，整个UI是由一个个小组件构成的一个大组件，每个组件只关系自身的逻辑，彼此独立（比如你有个按钮，很多页面都有这个按钮，那么就可以把这个按钮封装成该组件）。</li><li><strong>单项数据流</strong>：React只有单向数据流动-从父节点传递到子节点</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;&lt;blockquote&gt;&lt;p&gt;最近学了一些 react 和es6 的一些知识，并且使用 react 写了一个 TodoList 项目===&amp;gt;&lt;a href=&quot;http://shenzekun.cn/R-Todo/build/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;预览&lt;/a&gt; &amp;amp;&amp;amp; &lt;a href=&quot;https://github.com/shenzekun/R-Todo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;源码&lt;/a&gt; 感觉学的挺多的，并且遇到的坑也不少😂，说实话，一开始学 react 看到 jsx 语法有点不适应，说好的结构和行为分离呢😁，不过随着通过一个项目的完成，渐渐明白了这么写的好处&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react" scheme="http://www.shenzekun.cn/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>解决 webstrom sass 注释中文出错问题</title>
@@ -57,9 +79,9 @@
       <category term="前端" scheme="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
-    
       <category term="js" scheme="http://www.shenzekun.cn/tags/js/"/>
+    
+      <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
     
   </entry>
   

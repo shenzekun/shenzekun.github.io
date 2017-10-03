@@ -1,4 +1,4 @@
-http://www.shenzekun.cn/使用-react-总结.html
+http://www.shenzekun.cn/react-使用-总结.html
 http://www.shenzekun.cn/解决-webstrom-sass-注释中文出错问题.html
 http://www.shenzekun.cn/前端小项目之在线便利贴.html
 http://www.shenzekun.cn/解决inline-block元素的bug.html

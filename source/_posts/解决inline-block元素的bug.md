@@ -43,13 +43,13 @@ keywords: inline-block
 </html>
 ```
 
-#### 效果：
+### 效果：
 
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-efbd5e22bb492464.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#### 解决方法
+### 解决方法
 
 **1.去掉空格**
 
@@ -202,7 +202,7 @@ keywords: inline-block
 </html>
 ```
 
-#### 解决效果：
+### 解决效果：
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-e11f863d7e7beccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -240,12 +240,12 @@ keywords: inline-block
 </html>
 ```
 
-#### 效果
+### 效果
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-733a6cd2882f1d23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#### 解决方法
+### 解决方法
 
 **使用vertical-align**
 
@@ -280,7 +280,7 @@ keywords: inline-block
 </html>
 ```
 
-#### 解决效果
+### 解决效果
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-74787680d7bfab18.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -323,13 +323,13 @@ keywords: inline-block
 </html>
 ```
 
-#### 效果
+### 效果
 
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-3974cddc92207720.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#### 解决方法
+### 解决方法
 
 **还是使用vertical-align**
 
@@ -369,7 +369,7 @@ keywords: inline-block
 ```
 
 
-#### 解决效果
+### 解决效果
 
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-330207fc3fb88ea6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

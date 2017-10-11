@@ -1,3 +1,4 @@
+
 /* global NexT: true */
 
 $(document).ready(function () {

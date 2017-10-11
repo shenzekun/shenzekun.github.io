@@ -443,7 +443,7 @@ version: 5.0.2
 # --------------------------------------------------------------
 # add canvas-nest effect
 # see detail from https://github.com/hustcc/canvas-nest.js
-canvas_nest: true
+canvas_nest: false
 
 
 

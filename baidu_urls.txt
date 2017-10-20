@@ -1,3 +1,4 @@
+http://www.shenzekun.cn/js-的-call-与-apply-速度对比.html
 http://www.shenzekun.cn/Vimium-常用快捷键.html
 http://www.shenzekun.cn/前端学习笔记之观察者模式.html
 http://www.shenzekun.cn/react-使用-总结.html

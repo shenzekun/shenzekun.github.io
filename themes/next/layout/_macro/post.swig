@@ -11,7 +11,7 @@
 
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}">
-
+  
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ theme.author }}">
       <meta itemprop="description" content="{{ theme.signature }}">

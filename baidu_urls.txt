@@ -1,3 +1,4 @@
+http://www.shenzekun.cn/解决安装electron卡在node-install-js-不动问题.html
 http://www.shenzekun.cn/vscode-前端插件推荐.html
 http://www.shenzekun.cn/js-的-call-与-apply-速度对比.html
 http://www.shenzekun.cn/Vimium-常用快捷键.html

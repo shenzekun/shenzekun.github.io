@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[解决安装electron卡在node install.js 不动问题]]></title>
       <url>%2F%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85electron%E5%8D%A1%E5%9C%A8node-install-js-%E4%B8%8D%E5%8A%A8%E9%97%AE%E9%A2%98.html</url>
-      <content type="text"><![CDATA[在安装electron的时候，一直卡在node install.js不动😭，翻了墙也不行，于是在 github 上搜索终于找到解决方法，为此记录下来📝说明install.js,里面的下载是依赖于electron-download这个模块搜索electron-download发现：👇解决方法：打开终端，输入vi ~/.npmrc,在里面添加1electron_mirror="https://npm.taobao.org/mirrors/electron/"再试一次npm install electron -g,这次就成功了😄]]></content>
+      <content type="text"><![CDATA[在安装electron的时候，一直卡在node install.js不动😭，翻了墙也不行，于是在 github 上搜索终于找到解决方法，为此记录下来📝说明install.js,里面的下载是依赖于electron-download这个模块搜索electron-download发现：👇解决方法打开终端，输入vi ~/.npmrc,在里面添加1electron_mirror="https://npm.taobao.org/mirrors/electron/"再试一次npm install electron -g,这次就成功了😄]]></content>
     </entry>
 
     

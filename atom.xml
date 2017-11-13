@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2017-11-12T23:58:16.687Z</updated>
+  <updated>2017-11-13T00:00:20.705Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://www.shenzekun.cn/%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85electron%E5%8D%A1%E5%9C%A8node-install-js-%E4%B8%8D%E5%8A%A8%E9%97%AE%E9%A2%98.html"/>
     <id>http://www.shenzekun.cn/解决安装electron卡在node-install-js-不动问题.html</id>
     <published>2017-11-12T23:54:57.000Z</published>
-    <updated>2017-11-12T23:58:16.687Z</updated>
+    <updated>2017-11-13T00:00:20.705Z</updated>
     
-    <content type="html"><![CDATA[<hr><blockquote><p>在安装electron的时候，一直卡在node install.js不动😭，翻了墙也不行，于是在 github 上搜索终于找到解决方法，为此记录下来📝</p></blockquote><a id="more"></a><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>install.js</code>,里面的下载是依赖于<code>electron-download</code>这个模块<br><img src="http://upload-images.jianshu.io/upload_images/5308475-6a5758873a75a2c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>搜索<a href="https://github.com/electron-userland/electron-download" target="_blank" rel="external">electron-download</a>发现：👇</p><p><img src="http://upload-images.jianshu.io/upload_images/5308475-0b73ee9483927679.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>打开终端，输入<code>vi ~/.npmrc</code>,在里面添加</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">electron_mirror</span>=<span class="string">"https://npm.taobao.org/mirrors/electron/"</span></div></pre></td></tr></table></figure><p><img src="http://upload-images.jianshu.io/upload_images/5308475-433a4c62d776c545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>再试一次<code>npm install electron -g</code>,这次就成功了😄</p>]]></content>
+    <content type="html"><![CDATA[<hr><blockquote><p>在安装electron的时候，一直卡在node install.js不动😭，翻了墙也不行，于是在 github 上搜索终于找到解决方法，为此记录下来📝</p></blockquote><a id="more"></a><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p><code>install.js</code>,里面的下载是依赖于<code>electron-download</code>这个模块<br><img src="http://upload-images.jianshu.io/upload_images/5308475-6a5758873a75a2c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>搜索<a href="https://github.com/electron-userland/electron-download" target="_blank" rel="external">electron-download</a>发现：👇</p><p><img src="http://upload-images.jianshu.io/upload_images/5308475-0b73ee9483927679.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>打开终端，输入<code>vi ~/.npmrc</code>,在里面添加</p><figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">electron_mirror</span>=<span class="string">"https://npm.taobao.org/mirrors/electron/"</span></div></pre></td></tr></table></figure><p><img src="http://upload-images.jianshu.io/upload_images/5308475-433a4c62d776c545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p><p>再试一次<code>npm install electron -g</code>,这次就成功了😄</p>]]></content>
     
     <summary type="html">
     

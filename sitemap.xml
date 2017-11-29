@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</loc>
+    
+    <lastmod>2017-11-29T01:02:38.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.shenzekun.cn/%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85electron%E5%8D%A1%E5%9C%A8node-install-js-%E4%B8%8D%E5%8A%A8%E9%97%AE%E9%A2%98.html</loc>
     
     <lastmod>2017-11-13T00:00:20.705Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>http://www.shenzekun.cn/js-%E7%9A%84-call-%E4%B8%8E-apply-%E9%80%9F%E5%BA%A6%E5%AF%B9%E6%AF%94.html</loc>
     
     <lastmod>2017-11-12T23:54:48.466Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</loc>
-    
-    <lastmod>2017-11-12T23:54:48.464Z</lastmod>
     
   </url>
   

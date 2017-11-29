@@ -55,9 +55,11 @@ categories: hexo
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-71cf61436fe2ef27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![](http://upload-images.jianshu.io/upload_images/5308475-733457ecd3fbe289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
  **具体实现方法**
 
-点击[这里](https://github.com/blog/273-github-ribbons)挑选自己喜欢的样式，并复制代码。 例如，我是复制如下代码：
+点击[这里](https://github.com/blog/273-github-ribbons)或者[这里](http://tholman.com/github-corners/)挑选自己喜欢的样式，并复制代码。 例如，我是复制如下代码：
 ![](http://upload-images.jianshu.io/upload_images/5308475-96b22eacbe43838c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 然后粘贴刚才复制的代码到`themes/next/layout/_layout.swig`文件中(放在`<div class="headband"></div>`的下面)，并把`href`改为你的github地址
 ![](http://upload-images.jianshu.io/upload_images/5308475-d2601ad456db064b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

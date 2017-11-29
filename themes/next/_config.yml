@@ -484,7 +484,7 @@ pace: true
 #pace-theme-minimal
 # For example
 #    pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-flash
+pace_theme: pace-theme-minimal
 
 
 livere_uid: MTAyMC8yODgyMi81Mzky

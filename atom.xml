@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2017-12-04T23:44:24.897Z</updated>
+  <updated>2017-12-04T23:57:39.138Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.shenzekun.cn/%E8%A7%A3%E5%86%B3-webstrom-%E4%B8%8A%E7%9A%84-babel-%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98.html"/>
     <id>http://www.shenzekun.cn/解决-webstrom-上的-babel-编译问题.html</id>
     <published>2017-12-04T23:13:15.000Z</published>
-    <updated>2017-12-04T23:44:24.897Z</updated>
+    <updated>2017-12-04T23:57:39.138Z</updated>
     
     <content type="html"><![CDATA[<hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>近日，在写 ejs 文件时，我发现用 vscode 没有啥提示，因此换成 webStrom ，但是 es6 编译成 es5 的时候出现了一些问题😭，经过一番搜索， 最后终于成功解决，这里记录一下🖊</p></blockquote><a id="more"></a><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul><li><p>首先建立一个新的工程，点击<strong>设置</strong></p></li><li><p>在设置里面，把JavaScript language version改成<strong>ECMAScript 6</strong><br><img src="http://upload-images.jianshu.io/upload_images/5308475-384e088e614a106c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li><li><p>然后在js文件里写一段ES6代码</p></li><li><p>现在IDE会出现一个<code>File watcher</code>提示条</p></li><li><p>此时先别点Add watcher！</p></li><li><p>在终端切换到项目的路径，输入以下命令</p></li></ul><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">init</span> -y <span class="comment">//package.json</span></div></pre></td></tr></table></figure><ul><li>安装babel-cli</li></ul><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> babel-cli</div></pre></td></tr></table></figure><ul><li><p>现在可以去点Add watcher，点完之后会弹出一个框</p></li><li><p>下面第三行，<code>Program</code> 那一项，填</p></li></ul><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ProjectFileDir</span>$<span class="regexp">/node_modules/</span>.bin<span class="regexp">/babel</span></div></pre></td></tr></table></figure><ul><li><p>然后点OK，这个时候你就会发现左边多出来一个新文件</p></li><li><p>但是现在还没搞定！现在只是搞定了自动转换的功能，系统默认把ES6 编译成了ES6…</p></li><li><p>打开终端，输入：</p></li></ul><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> babel-preset-es2015</div></pre></td></tr></table></figure><ul><li><p>再次打开设置，在搜索框输入<code>file watchers</code>，点击<code>babel</code></p></li><li><p>在 Arguments 里面讲 <code>dev</code> 改为 <code>=es2015</code>,点击ok<br><img src="http://upload-images.jianshu.io/upload_images/5308475-cd5fda1fb471aa6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li><li><p>在根目录下新建一个<code>.babelrc</code>文件（就是babel在当前项目的配置文件），写上：</p></li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>完成😁</li></ul>]]></content>
     
@@ -33,7 +33,9 @@
       <category term="技巧" scheme="http://www.shenzekun.cn/categories/%E6%8A%80%E5%B7%A7/"/>
     
     
-      <category term="webstrom,babel" scheme="http://www.shenzekun.cn/tags/webstrom-babel/"/>
+      <category term="工具" scheme="http://www.shenzekun.cn/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="babel" scheme="http://www.shenzekun.cn/tags/babel/"/>
     
   </entry>
   

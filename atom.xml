@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2017-11-13T00:00:20.705Z</updated>
+  <updated>2017-12-04T23:44:24.897Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决 webstrom 上的 babel 编译问题</title>
+    <link href="http://www.shenzekun.cn/%E8%A7%A3%E5%86%B3-webstrom-%E4%B8%8A%E7%9A%84-babel-%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98.html"/>
+    <id>http://www.shenzekun.cn/解决-webstrom-上的-babel-编译问题.html</id>
+    <published>2017-12-04T23:13:15.000Z</published>
+    <updated>2017-12-04T23:44:24.897Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>近日，在写 ejs 文件时，我发现用 vscode 没有啥提示，因此换成 webStrom ，但是 es6 编译成 es5 的时候出现了一些问题😭，经过一番搜索， 最后终于成功解决，这里记录一下🖊</p></blockquote><a id="more"></a><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul><li><p>首先建立一个新的工程，点击<strong>设置</strong></p></li><li><p>在设置里面，把JavaScript language version改成<strong>ECMAScript 6</strong><br><img src="http://upload-images.jianshu.io/upload_images/5308475-384e088e614a106c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li><li><p>然后在js文件里写一段ES6代码</p></li><li><p>现在IDE会出现一个<code>File watcher</code>提示条</p></li><li><p>此时先别点Add watcher！</p></li><li><p>在终端切换到项目的路径，输入以下命令</p></li></ul><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">init</span> -y <span class="comment">//package.json</span></div></pre></td></tr></table></figure><ul><li>安装babel-cli</li></ul><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> babel-cli</div></pre></td></tr></table></figure><ul><li><p>现在可以去点Add watcher，点完之后会弹出一个框</p></li><li><p>下面第三行，<code>Program</code> 那一项，填</p></li></ul><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ProjectFileDir</span>$<span class="regexp">/node_modules/</span>.bin<span class="regexp">/babel</span></div></pre></td></tr></table></figure><ul><li><p>然后点OK，这个时候你就会发现左边多出来一个新文件</p></li><li><p>但是现在还没搞定！现在只是搞定了自动转换的功能，系统默认把ES6 编译成了ES6…</p></li><li><p>打开终端，输入：</p></li></ul><figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> babel-preset-es2015</div></pre></td></tr></table></figure><ul><li><p>再次打开设置，在搜索框输入<code>file watchers</code>，点击<code>babel</code></p></li><li><p>在 Arguments 里面讲 <code>dev</code> 改为 <code>=es2015</code>,点击ok<br><img src="http://upload-images.jianshu.io/upload_images/5308475-cd5fda1fb471aa6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p></li><li><p>在根目录下新建一个<code>.babelrc</code>文件（就是babel在当前项目的配置文件），写上：</p></li></ul><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>: [</div><div class="line">    <span class="string">"es2015"</span></div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure><ul><li>完成😁</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;&lt;p&gt;近日，在写 ejs 文件时，我发现用 vscode 没有啥提示，因此换成 webStrom ，但是 es6 编译成 es5 的时候出现了一些问题😭，经过一番搜索， 最后终于成功解决，这里记录一下🖊&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="技巧" scheme="http://www.shenzekun.cn/categories/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="webstrom,babel" scheme="http://www.shenzekun.cn/tags/webstrom-babel/"/>
+    
+  </entry>
   
   <entry>
     <title>解决安装electron卡在node install.js 不动问题</title>
@@ -431,28 +453,6 @@
     <summary type="html">
     
       &lt;hr&gt;&lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;给定一个n*m的矩阵A，求A中的一个非空子矩阵，使这个子矩阵中的元素和最大。&lt;br&gt;其中，A的子矩阵指在A中行和列均连续的一块。&lt;br&gt;输入格式&lt;br&gt;输入的第一行包含两个整数n, m，分别表示矩阵A的行数和列数。&lt;br&gt;接下来n行，每行m个整数，表示矩阵A。&lt;br&gt;输出格式&lt;br&gt;输出一行，包含一个整数，表示A中最大的子矩阵中的元素和。&lt;br&gt;样例输入&lt;/p&gt;&lt;p&gt;3 3&lt;br&gt;-1 -4 3&lt;br&gt;3 4 -1&lt;br&gt;-5 -2 8&lt;/p&gt;&lt;p&gt;样例输出&lt;br&gt;&lt;code&gt;10&lt;/code&gt;&lt;br&gt;样例说明&lt;br&gt;取最后一列，和为10。&lt;br&gt;数据规模和约定&lt;br&gt;对于50%的数据，1&amp;lt;=n, m&amp;lt;=50；&lt;br&gt;对于100%的数据，1&amp;lt;=n, m&amp;lt;=500，A中每个元素的绝对值不超过5000。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="c-c++" scheme="http://www.shenzekun.cn/categories/c-c/"/>
-    
-    
-      <category term="蓝桥杯" scheme="http://www.shenzekun.cn/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>蓝桥杯-四平方和问题</title>
-    <link href="http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E5%9B%9B%E5%B9%B3%E6%96%B9%E5%92%8C%E9%97%AE%E9%A2%98.html"/>
-    <id>http://www.shenzekun.cn/蓝桥杯-四平方和问题.html</id>
-    <published>2017-03-04T15:09:54.000Z</published>
-    <updated>2017-11-12T23:54:48.478Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>四平方和定理，又称为拉格朗日定理：<br>每个正整数都可以表示为至多4个正整数的平方和。<br>如果把0包括进去，就正好可以表示为4个数的平方和。</p><a id="more"></a><p>比如：<br>5 = 0^2 + 0^2 + 1^2 + 2^2<br>7 = 1^2 + 1^2 + 1^2 + 2^2<br>（ ^ 符号表示乘方的意思）</p><p>对于一个给定的正整数，可能存在多种平方和的表示法。<br>要求你对4个数排序：<br>0 &lt;= a &lt;= b &lt;= c &lt;= d<br>并对所有的可能表示法按 a,b,c,d 为联合主键升序排列，最后输出第一个表示法</p><p>程序输入为一个正整数N (N&lt;5000000)<br>要求输出4个非负整数，按从小到大排序，中间用空格分开</p><p>例如，输入：<br>5<br>则程序应该输出：<br>0 0 1 2</p><p>再例如，输入：<br>12<br>则程序应该输出：<br>0 2 2 2</p><p>再例如，输入：<br>773535<br>则程序应该输出：<br>1 1 267 838</p><p>资源约定：<br>峰值内存消耗 &lt; 256M<br>CPU消耗 &lt; 3000ms</p><p>请严格按要求输出，不要画蛇添足地打印类似：“请您输入…” 的多余内容。</p><p>所有代码放在同一个源文件中，调试通过后，拷贝提交该源码。</p><p>注意: main函数需要返回0<br>注意: 只使用ANSI C/ANSI C++ 标准，不要调用依赖于编译环境或操作系统的特殊函数。<br>注意: 所有依赖的函数必须明确地在源文件中 #include<xxx>， 不能通过工程设置而省略常用头文件。</xxx></p><p>提交时，注意选择所期望的编译器类型。</p><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>这题我是用暴力输出的，用四个循环，我先前用四个循环是从小加到大，但是超时了。我发现，输入的数越大，输出的前两个数是比较小的，但是后面两个数比较大，于是我把后面两个循环变成从大减到小，于是成功了╮(￣▽￣)╭</p><h2 id="实现代码（用C语言实现）"><a href="#实现代码（用C语言实现）" class="headerlink" title="实现代码（用C语言实现）"></a>实现代码（用C语言实现）</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">long</span> n)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">4</span>];</div><div class="line">    <span class="keyword">for</span> (a[<span class="number">0</span>]=<span class="number">0</span>; a[<span class="number">0</span>]&lt;<span class="built_in">sqrt</span>(n); a[<span class="number">0</span>]++) &#123;</div><div class="line">        <span class="keyword">for</span> (a[<span class="number">1</span>]=a[<span class="number">0</span>];a[<span class="number">1</span>]&lt;<span class="built_in">sqrt</span>(n) ; a[<span class="number">1</span>]++) &#123;</div><div class="line">            <span class="keyword">for</span> (a[<span class="number">2</span>]=<span class="built_in">sqrt</span>(n-a[<span class="number">1</span>]*a[<span class="number">1</span>]-a[<span class="number">0</span>]*a[<span class="number">0</span>]); a[<span class="number">2</span>]&gt;=a[<span class="number">1</span>]; a[<span class="number">2</span>]--) &#123;</div><div class="line">                <span class="keyword">for</span> (a[<span class="number">3</span>]=<span class="built_in">sqrt</span>(n-a[<span class="number">1</span>]*a[<span class="number">1</span>]-a[<span class="number">2</span>]*a[<span class="number">2</span>]-a[<span class="number">0</span>]*a[<span class="number">0</span>])+<span class="number">1</span>; a[<span class="number">3</span>]&gt;=a[<span class="number">2</span>]; a[<span class="number">3</span>]--) &#123;<span class="comment">//其实这里加1不加1都一样</span></div><div class="line">                    <span class="keyword">if</span> (a[<span class="number">0</span>]*a[<span class="number">0</span>]+a[<span class="number">1</span>]*a[<span class="number">1</span>]+a[<span class="number">2</span>]*a[<span class="number">2</span>]+a[<span class="number">3</span>]*a[<span class="number">3</span>]==n) &#123;</div><div class="line">                        <span class="built_in">printf</span>(<span class="string">"%d %d %d %d\n"</span>,a[<span class="number">0</span>],a[<span class="number">1</span>],a[<span class="number">2</span>],a[<span class="number">3</span>]);</div><div class="line">                        <span class="keyword">return</span> ;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">long</span> n;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%ld"</span>,&amp;n);</div><div class="line">    solve(n);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;问题：&quot;&gt;&lt;a href=&quot;#问题：&quot; class=&quot;headerlink&quot; title=&quot;问题：&quot;&gt;&lt;/a&gt;问题：&lt;/h2&gt;&lt;p&gt;四平方和定理，又称为拉格朗日定理：&lt;br&gt;每个正整数都可以表示为至多4个正整数的平方和。&lt;br&gt;如果把0包括进去，就正好可以表示为4个数的平方和。&lt;/p&gt;
     
     </summary>
     

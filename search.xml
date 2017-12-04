@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[解决 webstrom 上的 babel 编译问题]]></title>
+      <url>%2F%E8%A7%A3%E5%86%B3-webstrom-%E4%B8%8A%E7%9A%84-babel-%E7%BC%96%E8%AF%91%E9%97%AE%E9%A2%98.html</url>
+      <content type="text"><![CDATA[前言近日，在写 ejs 文件时，我发现用 vscode 没有啥提示，因此换成 webStrom ，但是 es6 编译成 es5 的时候出现了一些问题😭，经过一番搜索， 最后终于成功解决，这里记录一下🖊方法首先建立一个新的工程，点击设置在设置里面，把JavaScript language version改成ECMAScript 6然后在js文件里写一段ES6代码现在IDE会出现一个File watcher提示条此时先别点Add watcher！在终端切换到项目的路径，输入以下命令1npm init -y //package.json安装babel-cli1npm install --save-dev babel-cli现在可以去点Add watcher，点完之后会弹出一个框下面第三行，Program 那一项，填1$ProjectFileDir$/node_modules/.bin/babel然后点OK，这个时候你就会发现左边多出来一个新文件但是现在还没搞定！现在只是搞定了自动转换的功能，系统默认把ES6 编译成了ES6…打开终端，输入：1npm install --save-dev babel-preset-es2015再次打开设置，在搜索框输入file watchers，点击babel在 Arguments 里面讲 dev 改为 =es2015,点击ok在根目录下新建一个.babelrc文件（就是babel在当前项目的配置文件），写上：12345&#123; "presets": [ "es2015" ]&#125;完成😁]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[解决安装electron卡在node install.js 不动问题]]></title>
       <url>%2F%E8%A7%A3%E5%86%B3%E5%AE%89%E8%A3%85electron%E5%8D%A1%E5%9C%A8node-install-js-%E4%B8%8D%E5%8A%A8%E9%97%AE%E9%A2%98.html</url>
       <content type="text"><![CDATA[在安装electron的时候，一直卡在node install.js不动😭，翻了墙也不行，于是在 github 上搜索终于找到解决方法，为此记录下来📝说明install.js,里面的下载是依赖于electron-download这个模块搜索electron-download发现：👇解决方法打开终端，输入vi ~/.npmrc,在里面添加1electron_mirror="https://npm.taobao.org/mirrors/electron/"再试一次npm install electron -g,这次就成功了😄]]></content>

@@ -10,7 +10,6 @@
 <head>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
-
 </head>
 
 
@@ -60,7 +59,7 @@
       <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-
+  
   {% include '_scripts/vendors.swig' %}
   {% include '_scripts/commons.swig' %}
 

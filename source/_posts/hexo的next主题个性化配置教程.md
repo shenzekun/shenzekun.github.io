@@ -13,7 +13,7 @@ categories: hexo
 
 <!--more-->
 
-主要有以下31种：
+主要有以下32种：
 
 * 在右上角或者左上角实现fork me on github
 * 添加RSS
@@ -46,6 +46,7 @@ categories: hexo
 * 侧边栏推荐阅读
 * 自定义鼠标样式
 * 为博客加上萌萌的宠物
+* DaoVoice 在线联系
 
 ---
 
@@ -611,7 +612,7 @@ post_wordcount:
 
 在目录 `next/layout/_macro/下`添加 `my-copyright.swig`：
 
-```javascript
+```
 {% if page.copyright %}
 <div class="my_post_copyright">
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -630,7 +631,7 @@ post_wordcount:
 </div>
 <script> 
     var clipboard = new Clipboard('.fa-clipboard');
-	  $(".fa-clipboard").click(function(){
+    $(".fa-clipboard").click(function(){
       clipboard.on('success', function(){
         swal({   
           title: "",   
@@ -638,7 +639,7 @@ post_wordcount:
           icon: "success", 
           showConfirmButton: true
           });
-	    });
+	});
     });  
 </script>
 {% endif %}
@@ -1087,6 +1088,51 @@ git config --global core.autocrlf false
 ```
 >重新 hexo clean,hexo g,hexo d就行了
 
+
+---
+
+# 32.DaoVoice 在线联系
+
+**实现效果图**
+
+![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-053222.png)
+
+**具体实现方法**
+
+首先在 [daovoice](https://account.daocloud.io/signin) 注册账号,注册完成后会得到一个 app_id :
+
+![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-054308.png)
+记下这个 app_id的值，然后打开`/themes/next/layout/_partials/head.swig`,写下如下代码：
+
+```
+{% if theme.daovoice %}
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "{{theme.daovoice_app_id}}"
+    });
+  daovoice('update');
+  </script>
+{% endif %}
+```
+
+![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-054603.png)
+
+接着打开**主题配置文件**，在最后写下如下代码：
+
+```
+# Online contact 
+daovoice: true
+
+daovoice_app_id: 这里填你的刚才获得的 app_id
+```
+
+重新 hexo g ，hexo s 就能看到效果了。
+
+>安装成功后可以在DaoVoice 控制台上的聊天设置里设置聊天窗口样式，附上我的设置
+
+
+![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-055639.png)
 
 ---
 

@@ -374,7 +374,7 @@ calendar:
 #! ---------------------------------------------------------------
 
 # Motion
-use_motion: true
+use_motion: false
 
 # Fancybox
 fancybox: true
@@ -488,4 +488,10 @@ pace_theme: pace-theme-minimal
 
 
 livere_uid: MTAyMC8yODgyMi81Mzky
+
+
+# Online contact 
+daovoice: true
+
+daovoice_app_id: 0f81ff2f
 

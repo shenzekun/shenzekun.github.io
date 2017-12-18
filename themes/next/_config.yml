@@ -495,3 +495,7 @@ daovoice: true
 
 daovoice_app_id: 0f81ff2f
 
+
+# Fireworks
+fireworks: false
+

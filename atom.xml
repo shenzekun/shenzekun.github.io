@@ -261,9 +261,9 @@
       <category term="前端" scheme="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="js" scheme="http://www.shenzekun.cn/tags/js/"/>
-    
       <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
+    
+      <category term="js" scheme="http://www.shenzekun.cn/tags/js/"/>
     
   </entry>
   

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.shenzekun.cn/"/>
-  <updated>2018-04-21T02:26:49.499Z</updated>
+  <updated>2018-04-21T02:31:43.830Z</updated>
   <id>http://www.shenzekun.cn/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://www.shenzekun.cn/2018%E6%98%A5%E6%8B%9B%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93.html"/>
     <id>http://www.shenzekun.cn/2018春招面试总结.html</id>
     <published>2018-04-20T03:38:42.000Z</published>
-    <updated>2018-04-21T02:26:49.499Z</updated>
+    <updated>2018-04-21T02:31:43.830Z</updated>
     
-    <content type="html"><![CDATA[<hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>从3月底到4月中旬，经过半个月的面试，终于在4月17号顺利拿到了阿里的 offer，感谢这段时间内面试官、家人和朋友的帮助和鼓励。下面我会总结一些企业关注的点和面试的一些技巧</p></blockquote><h2 id="企业关注的点"><a href="#企业关注的点" class="headerlink" title="企业关注的点"></a>企业关注的点</h2><p>我认为大企业招聘技术实习生或者是应届生时关注有以下几点：</p><ul><li>你的学历（很重要，我腾讯现场二面估计就是挂在这上面，一上来就问我学校的排名😂）</li><li>你的成绩排名</li><li>你的项目经验</li><li>你的比赛奖项（关注会比较少，除非是获得 acm 那种大型比赛）</li><li>对技术是否热情</li><li>你的计算机基础</li><li>你的价值观</li><li>你的性格</li><li>你对当前应聘岗位的知识储备</li><li>沟通能力和团队协作</li><li>是否能够主动去学习新的东西</li></ul><p>在面试时，这些方面都会有所体现。<br>比如问你一些常规性问题（考察你对当前应聘岗位的知识储备）。<br>问你一些计算机基础问题（考察你的计算机基础）。<br>HR 问你一些关于性格优缺点和一些其他问题（考察你的性格和你的价值观）。<br>问你一些场景题（考察你的项目经验）。<br>问你最近看什么书或者你常逛什么技术社区（考察你是否能够主动去学习新的东西和你对技术是否有热情）等等。</p><h2 id="面试技巧"><a href="#面试技巧" class="headerlink" title="面试技巧"></a>面试技巧</h2><p>首先，在面试中，<strong>一定要自信不要紧张</strong>。遇到不会的问题不要慌张，可以将不会的问题转化为自己会的问题。我举个例子，比如面试官问你前端的<code>async</code> 和 <code>await</code> ，那么此时如果你这个不会，那么你可以问一下面试官这个主要是干嘛的，面试官一般都会跟你解释，他告诉你这是异步，那么你就可以往异步的方面靠，这样会让面试官觉得你掌握的还行🙂。</p><p>其次，就是<strong>简历的项目经验和技能一定要写好</strong>，因为面试官会一直问项目的实现，难点，和项目产生的背景。然后会问你在简历上的一些相关技能。个人认为如果不太会的技能就不要写上去。比如我写了<strong>了解</strong>前端安全和性能优化，然后很多面试官就问这个。。。一直问。。。还好准备的比较充分，不然就 gg 了🤣</p><p>最后，在面试时，<strong>千万不要抱怨你的队友，即便队友很水</strong>。我举个反例，有人在 hr 面试时，hr 问他对队友看法，然后他说队友很水，整个项目都是他在写，然后当天就挂了。你想，企业会要背后说别人闲话的人吗？</p><p>最后的最后，面试一定要保持<strong>积极的心态</strong>，就当面试是在自我学习的过程，每次面试都自我反省一下，到底哪些问题回答不好，然后去差缺补漏，这样一定会收获到一个自己满意的 offer 😀</p>]]></content>
+    <content type="html"><![CDATA[<hr><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>从3月底到4月中旬，经过半个月的面试，终于在4月17号顺利拿到了阿里的 offer，感谢这段时间内面试官、家人和朋友的帮助和鼓励。下面我会总结一些企业关注的点和面试的一些技巧。</p></blockquote><a id="more"></a><h2 id="企业关注的点"><a href="#企业关注的点" class="headerlink" title="企业关注的点"></a>企业关注的点</h2><p>我认为大企业招聘技术实习生或者是应届生时关注有以下几点：</p><ul><li>你的学历（很重要，我腾讯现场二面估计就是挂在这上面，一上来就问我学校的排名😂）</li><li>你的成绩排名</li><li>你的项目经验</li><li>你的比赛奖项（关注会比较少，除非是获得 acm 那种大型比赛）</li><li>对技术是否热情</li><li>你的计算机基础</li><li>你的价值观</li><li>你的性格</li><li>你对当前应聘岗位的知识储备</li><li>沟通能力和团队协作</li><li>是否能够主动去学习新的东西</li></ul><p>在面试时，这些方面都会有所体现。<br>比如问你一些常规性问题（考察你对当前应聘岗位的知识储备）。<br>问你一些计算机基础问题（考察你的计算机基础）。<br>HR 问你一些关于性格优缺点和一些其他问题（考察你的性格和你的价值观）。<br>问你一些场景题（考察你的项目经验）。<br>问你最近看什么书或者你常逛什么技术社区（考察你是否能够主动去学习新的东西和你对技术是否有热情）等等。</p><h2 id="面试技巧"><a href="#面试技巧" class="headerlink" title="面试技巧"></a>面试技巧</h2><p>首先，在面试中，<strong>一定要自信不要紧张</strong>。遇到不会的问题不要慌张，可以将不会的问题转化为自己会的问题。我举个例子，比如面试官问你前端的<code>async</code> 和 <code>await</code> ，那么此时如果你这个不会，那么你可以问一下面试官这个主要是干嘛的，面试官一般都会跟你解释，他告诉你这是异步，那么你就可以往异步的方面靠，这样会让面试官觉得你掌握的还行🙂。</p><p>其次，就是<strong>简历的项目经验和技能一定要写好</strong>，因为面试官会一直问项目的实现，难点，和项目产生的背景。然后会问你在简历上的一些相关技能。个人认为如果不太会的技能就不要写上去。比如我写了<strong>了解</strong>前端安全和性能优化，然后很多面试官就问这个。。。一直问。。。还好准备的比较充分，不然就 gg 了🤣</p><p>最后，在面试时，<strong>千万不要抱怨你的队友，即便队友很水</strong>。我举个反例，有人在 hr 面试时，hr 问他对队友看法，然后他说队友很水，整个项目都是他在写，然后当天就挂了。你想，企业会要背后说别人闲话的人吗？</p><p>最后的最后，面试一定要保持<strong>积极的心态</strong>，就当面试是在自我学习的过程，每次面试都自我反省一下，到底哪些问题回答不好，然后去差缺补漏，这样一定会收获到一个自己满意的 offer 😀</p>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;&lt;p&gt;从3月底到4月中旬，经过半个月的面试，终于在4月17号顺利拿到了阿里的 offer，感谢这段时间内面试官、家
+      &lt;hr&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;blockquote&gt;&lt;p&gt;从3月底到4月中旬，经过半个月的面试，终于在4月17号顺利拿到了阿里的 offer，感谢这段时间内面试官、家人和朋友的帮助和鼓励。下面我会总结一些企业关注的点和面试的一些技巧。&lt;/p&gt;&lt;/blockquote&gt;
     
     </summary>
     
@@ -283,9 +283,9 @@
       <category term="前端" scheme="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
-    
       <category term="js" scheme="http://www.shenzekun.cn/tags/js/"/>
+    
+      <category term="node" scheme="http://www.shenzekun.cn/tags/node/"/>
     
   </entry>
   

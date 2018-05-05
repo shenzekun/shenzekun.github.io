@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.shenzekun.cn/html5%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E5%8A%9F%E8%83%BD.html</loc>
+    <lastmod>2018-05-05T14:56:10.825Z</lastmod>
+    <data>
+        <display>
+        <title>html5调用摄像头功能</title>
+        <pubTime>2018-05-05T13:19:14.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+        <tag>html</tag>
+         
+        <tag>js</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html</loc>
     <lastmod>2018-04-27T14:48:54.638Z</lastmod>
     <data>
@@ -253,12 +277,12 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E.html</loc>
+    <loc>http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF%20%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92%EF%BC%81.html</loc>
     <lastmod>2017-11-12T23:54:48.477Z</lastmod>
     <data>
         <display>
-        <title>蓝桥杯 三羊献瑞</title>
-        <pubTime>2017-03-04T14:59:52.000Z</pubTime>
+        <title>蓝桥杯 李白喝酒</title>
+        <pubTime>2017-03-03T14:34:14.000Z</pubTime>
         
         <tag>蓝桥杯</tag>
          
@@ -273,12 +297,12 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF%20%E6%9D%8E%E7%99%BD%E5%96%9D%E9%85%92%EF%BC%81.html</loc>
+    <loc>http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E.html</loc>
     <lastmod>2017-11-12T23:54:48.477Z</lastmod>
     <data>
         <display>
-        <title>蓝桥杯 李白喝酒</title>
-        <pubTime>2017-03-03T14:34:14.000Z</pubTime>
+        <title>蓝桥杯 三羊献瑞</title>
+        <pubTime>2017-03-04T14:59:52.000Z</pubTime>
         
         <tag>蓝桥杯</tag>
          
@@ -402,9 +426,9 @@
         <title>前端小项目之在线便利贴</title>
         <pubTime>2017-09-13T12:48:33.000Z</pubTime>
         
-        <tag>node</tag>
-         
         <tag>js</tag>
+         
+        <tag>node</tag>
          
          
            

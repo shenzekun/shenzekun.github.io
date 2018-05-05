@@ -1,3 +1,4 @@
+http://www.shenzekun.cn/html5调用摄像头功能.html
 http://www.shenzekun.cn/2018春招面试总结.html
 http://www.shenzekun.cn/vue全家桶与typescript使用总结.html
 http://www.shenzekun.cn/node简单实现一个更改头像功能.html

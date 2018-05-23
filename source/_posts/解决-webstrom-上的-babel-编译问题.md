@@ -60,7 +60,7 @@ npm install --save-dev babel-preset-es2015
 
 * 再次打开设置，在搜索框输入`file watchers`，点击`babel`
 
-* 在 Arguments 里面讲 `dev` 改为  `=es2015`,点击ok
+* 在 Arguments 里面将 `env` 改为  `=es2015`,点击ok
 ![](http://upload-images.jianshu.io/upload_images/5308475-cd5fda1fb471aa6b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 在根目录下新建一个`.babelrc`文件（就是babel在当前项目的配置文件），写上：

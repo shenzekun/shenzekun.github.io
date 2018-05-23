@@ -430,7 +430,7 @@ code {
 ![](http://upload-images.jianshu.io/upload_images/5308475-3124557da2b9c75f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **具体实现方法**
-打开`\themes\next\layout_partials\footer.swig`文件,在copyright前加上画红线这句话：
+打开`\themes\next\layout\_partials\footer.swig`文件,在copyright前加上画红线这句话：
 ![](http://upload-images.jianshu.io/upload_images/5308475-ef8a4643f33fbaa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码如下：
@@ -872,13 +872,18 @@ livere_uid: your uid
 ![](http://upload-images.jianshu.io/upload_images/5308475-446793cd6d740b19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 代码如下：
+
 ```
 <script>
-    (function(){
-        if('{{ page.password }}'){
-            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+    (function () {
+        if ('{{ page.password }}') {
+            if (prompt('请输入文章密码') !== '{{ page.password }}') {
                 alert('密码错误！');
-                history.back();
+                if (history.length === 1) {
+                    location.replace("http://xxxxxxx.xxx"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
             }
         }
     })();
@@ -1031,20 +1036,31 @@ links:
 npm install -save hexo-helper-live2d
 ```
 
-然后打开`Hexo/blog/themes/next/layout`
-的`_layout.swig`,将下面代码放到`</body>`之前：
+~~然后打开`Hexo/blog/themes/next/layout`
+的`_layout.swig`,将下面代码放到`</body>`之前：~~
 
-```
-{{ live2d() }}
-```
 
-然后在在 `hexo` 的 `_config.yml `中添加参数：
+(**注意，由于官方更新了包，所以画删除线的不用弄**)
+
+然后在在 `hexo` 的 `_config.yml `中添加参数：（具体配置可以看[官方文档](https://github.com/EYHN/hexo-helper-live2d)）
 
 ```
 live2d:
-  model: wanko
-  bottom: -30
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-wanko
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
 ```
+
 然后hexo clean ，hexo g ，hexo d 就可以看到了。
 
 **下面是一些model，可以换不同的宠物**

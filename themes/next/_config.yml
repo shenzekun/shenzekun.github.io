@@ -80,7 +80,7 @@ font:
   enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host: 
+  host:
 
   # Global font settings used on <body> element.
   global:
@@ -211,7 +211,7 @@ links:
 #   image: url-of-image   - Images's url
 custom_logo:
   enabled: false
-  image: 
+  image:
 
 
 # Code Highlight theme
@@ -258,7 +258,7 @@ mathjax:
 #baidu_analytics:
 
 #Duoshuo ShortName
-#duoshuo_shortname: 
+#duoshuo_shortname:
 
 # Disqus
 #disqus_shortname:
@@ -467,7 +467,7 @@ post_wordcount:
 
 # Progress bar in the top during page loading.
 pace: true
-# pace theme 
+# pace theme
 # pace_theme list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -490,7 +490,7 @@ pace_theme: pace-theme-minimal
 livere_uid: MTAyMC8yODgyMi81Mzky
 
 
-# Online contact 
+# Online contact
 daovoice: true
 
 daovoice_app_id: 0f81ff2f

@@ -18,14 +18,14 @@ keywords: react-native
 
 ### 问题一
 出现Remote debugger is in a background tab which may cause apps to perform slowly黄色警报
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-043813.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-043813.png)
 
 **解决方法**
 把那个chrome的Tab页保持最前，窗口不要最小化就好了。。。。
 
 ### 问题二
 出现connection to http://localhost:8081 红色错误
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-044331.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-044331.png)
 
 **解决方法**
 这个很神奇。遇到了多按 ⌘R几下或者把模拟器上的项目删除之后重新加载一般就会解决。
@@ -41,7 +41,7 @@ yarn cache clean&&yarn
 
 ### 问题三
 出现Runtime is not ready for debugging红色错误
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-044718.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-044718.png)
 
 **两种解决方法**
 
@@ -50,7 +50,7 @@ yarn cache clean&&yarn
 
 ### 问题四
 出现Unrecognized font family 红色报警
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-045023.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-045023.png)
 
 **解决方法**
 在终端输入
@@ -69,7 +69,7 @@ React Native不支持自动计算Image等View的大小
 
 ### 问题六
 react-native-interactable 出现 Invariant Violation红色警报
-![](http://ohggtqwxx.bkt.clouddn.com/15257552426894.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15257552426894.jpg)
 
 **解决方法**
 降级：将 react-native 版本降到0.53.0 就行了
@@ -77,7 +77,7 @@ react-native-interactable 出现 Invariant Violation红色警报
 
 ### 问题七
 Build后遇到'No bundle URL present’ error
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-045522.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-045522.png)
 
 **解决方法**
 关闭SS,VPN这类的服务，重新 `react-native run-ios` 即可。很神奇。。。
@@ -86,7 +86,7 @@ Build后遇到'No bundle URL present’ error
 
 ### 问题八
 出现regeneratorRuntime is not defined
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-045839.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-045839.png)
 
 **解决方法**
 
@@ -101,9 +101,9 @@ react-native start --reset-cache
 
 **解决方法**
 打开 xcode 运行项目出现
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-050038.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-050038.png)
 在这里面有个 libInteractable.a 删除掉就行了
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-050103.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-050103.png)
 
 参考：[rebeccahughes/react-native-device-info#251](https://github.com/rebeccahughes/react-native-device-info/issues/251)
 
@@ -117,7 +117,7 @@ react-native start --reset-cache
 
 ### 问题十一
 出现Invariant Violation: View config not found for name 红色警报
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-050336.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-050336.png)
 
 **解决方法**
 https://stackoverflow.com/questions/46750477/react-native-invariant-violation-view-config
@@ -132,7 +132,7 @@ Button 组件无法直接使用 style定宽度和高度等等
 
 ### 问题十三
 使用TouchableWithoutFeedback 出现错误
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-050857.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-050857.png)
 
 **解决方法**
 TouchableWithoutFeedback，这个组件必须至少有一个child，如果是多个组件，必须以view来包装。写成这样就可以了
@@ -152,10 +152,10 @@ render() {
 
 ### 问题十四
 xcode出现Showing All Messages Code signing is required for product type 'Unit Test Bundle' in SDK 'iOS 11.2'
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-051045.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-051045.png)
 
 在Xcode上
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-051232.png) 
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-051232.png) 
 即可
 
 ### 问题十五
@@ -178,7 +178,7 @@ React Navigation TabNavigator 一个帧的延迟
 
 ### 问题十七
 出现timed out waiting for 红色警报
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-051715.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-051715.png)
 
 **解决方法**
 重启模拟器。。。
@@ -188,7 +188,7 @@ react native 没有\<br />组件换行
 
 **解决方法**
 可以在 Text 组件里写 {'\n'},如：
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-051845.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-051845.png)
 
 ### 问题十九
 react native checkbox 原生组件只适合安卓
@@ -243,7 +243,7 @@ react-navigation tab 点击 StatusBar 颜色问题
  
  **解决方法**
  ios 9 以上，默认是Https请求，如需支持Http，修改info.plist文件添加键值对就好了
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-052245.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-052245.png)
 
 ### 问题二十三
 react-native-swiper 动态数据渲染，翻页出现错乱
@@ -252,17 +252,17 @@ react-native-swiper 动态数据渲染，翻页出现错乱
 一开始，使用静态的数据没问题，但是使用动态加载数据就出现问题，经过一些调试发现，可能是 index 的问题，在 github 库里搜 issue 果然有人遇到过这个问题 https://github.com/leecade/react-native-swiper/issues/720
 
 **解决方法**
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-052442.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-052442.png)
 添加 key 值是你**获取数据的长度**
 
 ### 问题二十四
 react-native-swiper 跳转索引 bug 问题。
 
 一开始
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-052540.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-052540.png)
 
 在翻页的时候，出现索引随机变化的问题，当时看了一下 api 是没有问题的，一直定位到
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-052704.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-052704.png)
 
 将标题不显示就发现索引没有问题了，不会随机翻页。。。，接着在某一页看到题目比较大，发生了抖动，结果造成了随机翻页，再一看里面有数字和文字，大小不一样，设置一下字体就好了。。。。个人认为是抖动的时候可能触发了react-native-swiper的翻页，结果造成随机翻页。。。
 神坑的 bug，找了4，5个小时。。。。😡
@@ -281,7 +281,7 @@ ListView, FlatList, Sections and VirtualizedList 继承了 ScrollView
 
 ### 问题二十六
 出现 could not connect to development server红色警报
-![](http://ohggtqwxx.bkt.clouddn.com/2018-05-08-052952.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2018-05-08-052952.png)
 
 **解决方法**
 关掉 vpn ，或者不要开全局模式。。。很神奇

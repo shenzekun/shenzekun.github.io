@@ -436,7 +436,7 @@ code {
 代码如下：
 
 ```
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 ```
 然后再合适的位置添加显示统计的代码，如图：
 ![](http://upload-images.jianshu.io/upload_images/5308475-bd6fb55b6847d13a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -623,8 +623,8 @@ post_wordcount:
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>本文标题:</span><a href="{{ url_for(page.path) }}">{{ page.title }}</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 {{ theme.author }} 的个人博客">{{ theme.author }}</a></p>
-  <p><span>发布时间:</span>{{ page.date.format("YYYY年MM月DD日 - HH:MM") }}</p>
-  <p><span>最后更新:</span>{{ page.updated.format("YYYY年MM月DD日 - HH:MM") }}</p>
+  <p><span>发布时间:</span>{{ page.date.format("YYYY年MM月DD日 - HH:mm") }}</p>
+  <p><span>最后更新:</span>{{ page.updated.format("YYYY年MM月DD日 - HH:mm") }}</p>
   <p><span>原始链接:</span><a href="{{ url_for(page.path) }}" title="{{ page.title }}">{{ page.permalink }}</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="{{ page.permalink }}"  aria-label="复制成功！"></i></span>
   </p>
@@ -897,7 +897,9 @@ livere_uid: your uid
 
 # 25. 添加jiathis分享
 
-在**主题配置文件**中，jiathis为true，就行了，如下图
+> **注意：**JiaThis 不支持 https
+
+在**主题配置文件**中，JiaThis为true，就行了，如下图
 
 ![](http://upload-images.jianshu.io/upload_images/5308475-f381bc9e7c73b1e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -1027,7 +1029,7 @@ links:
 # 31.为博客加上萌萌的宠物
 
 **实现效果图**
-![](http://ohggtqwxx.bkt.clouddn.com/15006365382590.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15006365382590.jpg)
 
 **具体实现方法**
 在终端切换到你的博客的路径里，然后输入如下代码：
@@ -1063,47 +1065,6 @@ live2d:
 
 然后hexo clean ，hexo g ，hexo d 就可以看到了。
 
-**下面是一些model，可以换不同的宠物**
-
-*  model 模型名称 默认值: z16
-    * Gantzert_Felixander
-    * Epsilon2.1
-    * haru
-    * miku
-    * ni-j
-    * nico
-    * nito
-    * nipsilon
-    * nietzsche
-    * shizuku
-    * tsumiki
-    * wanko
-    * z16
-    * hibiki
-    * koharu
-    * haruto
-    * Unitychan
-    * tororo
-    * hijiki
-* width 宽度 默认值: 150
-* height 高度 默认值： 300
-* className `<canvas> `元素的类名 默认值： live2d
-* id `<canvas>` 元素的id 默认值： live2dcanvas
-* bottom `<canvas>` 元素的底部偏移 默认值： -20 如果嫌模型位置不正确 可以调整这个参数
-
-
-~~**用这个有缺点，如果是在手机上看的话，感觉不是很好，宠物一直挡着文字😂😂，还有就是加载有点慢**~~
-
-![](http://ohggtqwxx.bkt.clouddn.com/15006388832427.jpg)
-
->（感谢[Layne](https://segmentfault.com/u/gengxuelei)网友的提醒，目前手机上显示宠物的问题已经解决，如果不想在手机上显示宠物的话，修改主题配置文件，改为如下：）
-
-```
-live2d:
-  model: wanko
-  bottom: -30
-  mobileShow: false 
-```
 
 >注意！如果你在 hexo d 的时候出现我下面这个问题
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fhrqw92685j31dk0q4grl.jpg)
@@ -1121,13 +1082,13 @@ git config --global core.autocrlf false
 
 **实现效果图**
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-053222.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-18-053222.png)
 
 **具体实现方法**
 
 首先在 [daovoice](https://account.daocloud.io/signin) 注册账号,[邀请码](http://dashboard.daovoice.io/get-started?invite_code=0f81ff2f)是`0f81ff2f`，注册完成后会得到一个 app_id :
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-054308.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-18-054308.png)
 记下这个 app_id的值，然后打开`/themes/next/layout/_partials/head.swig`,写下如下代码：
 
 ```
@@ -1142,7 +1103,7 @@ git config --global core.autocrlf false
 {% endif %}
 ```
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-054603.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-18-054603.png)
 
 接着打开**主题配置文件**，在最后写下如下代码：
 
@@ -1158,7 +1119,7 @@ daovoice_app_id: 这里填你的刚才获得的 app_id
 >安装成功后可以在DaoVoice 控制台上的聊天设置里设置聊天窗口样式，附上我的设置
 
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-055639.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-18-055639.png)
 
 ---
 
@@ -1166,7 +1127,7 @@ daovoice_app_id: 这里填你的刚才获得的 app_id
 
 **实现效果图**
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-18-084649.png)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-18-084649.png)
 
 **实现方法**
 

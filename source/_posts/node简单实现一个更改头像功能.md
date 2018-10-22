@@ -16,7 +16,7 @@ keywords: 图片上传，更改头像
 <!--more-->
 
 ## 思路
-1.  **首先**，当用户点击上传头像，更新头像的时候，将头像上传到项目的一个文件夹里面（*我是存放在项目的`public/images/img`里面*），并且将图像名重命名（*可以以时间戳来命名*）。![](http://ohggtqwxx.bkt.clouddn.com/15144357069018.jpg)
+1.  **首先**，当用户点击上传头像，更新头像的时候，将头像上传到项目的一个文件夹里面（*我是存放在项目的`public/images/img`里面*），并且将图像名重命名（*可以以时间戳来命名*）。![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15144357069018.jpg)
 
 2. **同时**图片在项目的路径插入到用户表的当前用户的 `userpicturepath` 里面
 3. 然后更新用户的 session，将图片里面的路径赋值给 session 的里面的`picture`属性里面
@@ -24,7 +24,7 @@ keywords: 图片上传，更改头像
 
 ## 实现效果
 
-![](http://ohggtqwxx.bkt.clouddn.com/2017-12-28-user-upload.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/2017-12-28-user-upload.gif)
 
 ## 代码
 

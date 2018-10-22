@@ -18,14 +18,14 @@ keywords: 编辑器
 
 >自动添加HTML / XML关闭标签（必备）
 
-![](http://ohggtqwxx.bkt.clouddn.com/15092830970499.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15092830970499.gif)
 
 ### Auto Rename Tag
 
 >自动重命名配对的HTML / XML标签(必备)
 
 
-![](http://ohggtqwxx.bkt.clouddn.com/15092838452118.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15092838452118.gif)
 
 
 ### Beautify
@@ -55,7 +55,7 @@ keywords: 编辑器
 
 
 >非常强大的一款插件，能够运行多种语言的代码片段或代码文件：C，C ++，Java，JavaScript，PHP，Python，Perl，Ruby，Go等等，安装完成后，右上角出现：
-![](http://ohggtqwxx.bkt.clouddn.com/15092851845587.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15092851845587.jpg)
 点击这个按钮就可以运行你的文件了（必备）
 
 ### css peek
@@ -63,7 +63,7 @@ keywords: 编辑器
 >能够查看CSS ID和类的字符串作为HTML文件中相应的CSS定义（必备）
 
 **使用方法**：将光标放在class里面的属性，右击
-![](http://ohggtqwxx.bkt.clouddn.com/15092856731870.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15092856731870.jpg)
 
 ### Dash
 
@@ -71,7 +71,7 @@ keywords: 编辑器
 
 >**快捷键 `ctrl + h`** 它根据你当前选中的语言查找 dash 里面的文档
 
-![](http://ohggtqwxx.bkt.clouddn.com/navicat-id-increase.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/navicat-id-increase.gif)
 
 ### Debugger for Chrome
 
@@ -83,7 +83,7 @@ keywords: 编辑器
 
 >添加注释块
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093400730364.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093400730364.jpg)
 
 
 **设置：**
@@ -111,13 +111,13 @@ keywords: 编辑器
 
 >在底部状态栏显示当前文件大小，点击后还可以看到详细创建、修改时间
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093414045557.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093414045557.jpg)
 
 
 ### Git History
 
 >以图表的形式查看git日志 
-![](http://ohggtqwxx.bkt.clouddn.com/15093254060028.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093254060028.jpg)
 
 使用 command+shift+p（Ctrl+shift+p） 输入git log就可以看到了
 
@@ -125,7 +125,7 @@ keywords: 编辑器
 
 >git 日志插件
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093256313651.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093256313651.jpg)
 
 ### HTML CSS Support
 
@@ -139,13 +139,13 @@ keywords: 编辑器
 
 >html代码检测
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093260108371.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093260108371.jpg)
 
 ### htmltagwrap
 
 >可以在选中HTML标签中外面套一层标签
 
-![](http://ohggtqwxx.bkt.clouddn.com/vscode-htmltagwrap.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/vscode-htmltagwrap.gif)
 
 
 **使用**：选择一大段代码，然后按“Alt + W”
@@ -155,7 +155,7 @@ keywords: 编辑器
 >突出目前的缩进深度
 
 
-![](http://ohggtqwxx.bkt.clouddn.com/Indenticator.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/Indenticator.gif)
 
 
 ### IntelliSense for CSS class names
@@ -166,7 +166,7 @@ keywords: 编辑器
 
 >鼠标移到路径里显示图像预览
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093708776977.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093708776977.jpg)
 
 
 ### JavaScript (ES6) code snippets
@@ -201,7 +201,7 @@ keywords: 编辑器
 
 **使用**
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093281194279.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093281194279.jpg)
 
 
 ### markdownlint
@@ -212,7 +212,7 @@ keywords: 编辑器
 
 >可以在导入语句中自动完成JavaScript / TypeScript模块。
 
-![](http://ohggtqwxx.bkt.clouddn.com/vscode-node.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/vscode-node.gif)
 
 ### npm Intellisense
 
@@ -229,7 +229,7 @@ keywords: 编辑器
 
 >输出提示的文字颜色有一些变化，方便获取关键信息
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093384952721.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093384952721.jpg)
 
 
 ### Path Intellisense
@@ -253,7 +253,7 @@ keywords: 编辑器
 
 >生成假数据，地址，电话，图片等等
 
-![](http://ohggtqwxx.bkt.clouddn.com/vscode-faker.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/vscode-faker.gif)
 
 打开方式shift+cmd+p(shift+ctrl+p)) 然后输入faker 就可以选择了
 
@@ -261,7 +261,7 @@ keywords: 编辑器
 
 >实时观看 javascript 的变量的变化
 
-![](http://ohggtqwxx.bkt.clouddn.com/vscode-quokka.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/vscode-quokka.gif)
 
 **使用**：先shift+cmd+p （ctrl+shift+p）输入 quokka 选择 new javascript 就行了😀
 
@@ -269,7 +269,7 @@ keywords: 编辑器
 
 >测试正则的插件
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093406954760.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093406954760.jpg)
 
 
 ### TSLint
@@ -281,7 +281,7 @@ keywords: 编辑器
 
 >自动搜索工作区文件中的TypeScript定义，并将所有已知符号作为完成项，以允许代码完成。
 
-![](http://ohggtqwxx.bkt.clouddn.com/vscode-ts.gif)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/vscode-ts.gif)
 
 
 ### vscode-icons
@@ -341,22 +341,22 @@ keywords: 编辑器
 ### One Monokai Theme
 
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093223049049.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093223049049.jpg)
 
 
 ### Eva Theme
 
 里面包含黑色和白色主题，这个白色主题感觉挺好看的
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093223899355.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093223899355.jpg)
 
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093223624542.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093223624542.jpg)
 
 
 ### Boxy Theme Kit
 
-![](http://ohggtqwxx.bkt.clouddn.com/15093265368328.jpg)
+![](https://blog-1257878287.cos.ap-chengdu.myqcloud.com/15093265368328.jpg)
 
 
 

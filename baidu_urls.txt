@@ -1,3 +1,4 @@
+http://www.shenzekun.cn/判断浏览器是否支持-webp-的几种解决方法.html
 http://www.shenzekun.cn/JavaScript中的Object-freeze与const之间的区别-译.html
 http://www.shenzekun.cn/Git-更新-commit-的内容和多个-commit-合并.html
 http://www.shenzekun.cn/使用-VSCode-调试-Koa-或者-Express.html

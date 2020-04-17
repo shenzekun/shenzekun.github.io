@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.shenzekun.cn/React-16-8-6-%E7%89%88%E6%9C%AC%E5%AD%98%E5%9C%A8%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.html</loc>
+    <lastmod>2020-04-17T17:03:17.278Z</lastmod>
+    <data>
+        <display>
+        <title>React 16.8.6 版本存在内存泄露</title>
+        <pubTime>2020-04-17T17:01:26.000Z</pubTime>
+        
+        <tag>react</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.shenzekun.cn/IVWEB-%E7%8E%A9%E8%BD%AC-WASM-%E7%B3%BB%E5%88%97-WEBGL-YUV%E6%B8%B2%E6%9F%93%E5%9B%BE%E5%83%8F%E5%AE%9E%E8%B7%B5.html</loc>
     <lastmod>2019-12-14T05:21:43.417Z</lastmod>
     <data>
@@ -352,26 +372,6 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%8E%B0%EF%BC%8C%E8%BF%99%E4%B9%8B%E4%B8%AD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html</loc>
-    <lastmod>2018-10-21T12:51:44.851Z</lastmod>
-    <data>
-        <display>
-        <title>前端面试题：从url到页面展现，这之中发生了什么？</title>
-        <pubTime>2017-05-22T03:36:08.000Z</pubTime>
-        
-        <tag>前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.shenzekun.cn/%E8%93%9D%E6%A1%A5%E6%9D%AF-%E4%B8%89%E7%BE%8A%E7%8C%AE%E7%91%9E.html</loc>
     <lastmod>2018-10-21T12:51:44.851Z</lastmod>
     <data>
@@ -392,6 +392,26 @@
 
     
   <url>
+    <loc>http://www.shenzekun.cn/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E4%BB%8Eurl%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%8E%B0%EF%BC%8C%E8%BF%99%E4%B9%8B%E4%B8%AD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88.html</loc>
+    <lastmod>2018-10-21T12:51:44.851Z</lastmod>
+    <data>
+        <display>
+        <title>前端面试题：从url到页面展现，这之中发生了什么？</title>
+        <pubTime>2017-05-22T03:36:08.000Z</pubTime>
+        
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.shenzekun.cn/html5%E8%B0%83%E7%94%A8%E6%91%84%E5%83%8F%E5%A4%B4%E5%8A%9F%E8%83%BD.html</loc>
     <lastmod>2018-10-21T12:51:44.850Z</lastmod>
     <data>
@@ -399,11 +419,11 @@
         <title>html5调用摄像头功能</title>
         <pubTime>2018-05-05T13:19:14.000Z</pubTime>
         
+        <tag>js</tag>
+         
         <tag>前端</tag>
          
         <tag>html</tag>
-         
-        <tag>js</tag>
          
          
            
@@ -496,26 +516,6 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/%E5%AD%A6%E7%94%9F%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7JetBrains%E8%AE%B8%E5%8F%AF%E8%AF%81%E6%8A%80%E5%B7%A7.html</loc>
-    <lastmod>2018-10-21T12:51:44.844Z</lastmod>
-    <data>
-        <display>
-        <title>学生免费申请JetBrains许可证技巧</title>
-        <pubTime>2017-05-22T11:22:51.000Z</pubTime>
-        
-        <tag>技巧</tag>
-         
-         
-           
-             
-              <breadCrumb title="技巧" url="http://www.shenzekun.cn/categories/%E6%8A%80%E5%B7%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.shenzekun.cn/Vimium-%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE.html</loc>
     <lastmod>2018-10-21T12:51:44.844Z</lastmod>
     <data>
@@ -536,19 +536,19 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/react-%E4%BD%BF%E7%94%A8-%E6%80%BB%E7%BB%93.html</loc>
-    <lastmod>2018-10-21T12:51:44.843Z</lastmod>
+    <loc>http://www.shenzekun.cn/%E5%AD%A6%E7%94%9F%E5%85%8D%E8%B4%B9%E7%94%B3%E8%AF%B7JetBrains%E8%AE%B8%E5%8F%AF%E8%AF%81%E6%8A%80%E5%B7%A7.html</loc>
+    <lastmod>2018-10-21T12:51:44.844Z</lastmod>
     <data>
         <display>
-        <title>react使用总结</title>
-        <pubTime>2017-10-02T07:34:31.000Z</pubTime>
+        <title>学生免费申请JetBrains许可证技巧</title>
+        <pubTime>2017-05-22T11:22:51.000Z</pubTime>
         
-        <tag>react</tag>
+        <tag>技巧</tag>
          
          
            
              
-              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+              <breadCrumb title="技巧" url="http://www.shenzekun.cn/categories/%E6%8A%80%E5%B7%A7/"/>
           
         </display>
     </data>
@@ -576,14 +576,14 @@
 
     
   <url>
-    <loc>http://www.shenzekun.cn/%E6%9C%89%E5%85%B3HTML%E5%B8%B8%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9.html</loc>
-    <lastmod>2018-10-21T12:51:44.842Z</lastmod>
+    <loc>http://www.shenzekun.cn/react-%E4%BD%BF%E7%94%A8-%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2018-10-21T12:51:44.843Z</lastmod>
     <data>
         <display>
-        <title>有关HTML常被问到的知识点</title>
-        <pubTime>2017-05-22T14:47:36.000Z</pubTime>
+        <title>react使用总结</title>
+        <pubTime>2017-10-02T07:34:31.000Z</pubTime>
         
-        <tag>html</tag>
+        <tag>react</tag>
          
          
            
@@ -616,6 +616,26 @@
 
     
   <url>
+    <loc>http://www.shenzekun.cn/%E6%9C%89%E5%85%B3HTML%E5%B8%B8%E8%A2%AB%E9%97%AE%E5%88%B0%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9.html</loc>
+    <lastmod>2018-10-21T12:51:44.842Z</lastmod>
+    <data>
+        <display>
+        <title>有关HTML常被问到的知识点</title>
+        <pubTime>2017-05-22T14:47:36.000Z</pubTime>
+        
+        <tag>html</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端" url="http://www.shenzekun.cn/categories/%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.shenzekun.cn/js-%E7%9A%84-call-%E4%B8%8E-apply-%E9%80%9F%E5%BA%A6%E5%AF%B9%E6%AF%94.html</loc>
     <lastmod>2018-10-21T12:51:44.841Z</lastmod>
     <data>
@@ -623,9 +643,9 @@
         <title>js 的 call 与 apply 速度对比</title>
         <pubTime>2017-10-20T04:37:57.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>js</tag>
+         
+        <tag>前端</tag>
          
          
            
@@ -685,9 +705,9 @@
         <title>四种方法实现数据双向绑定</title>
         <pubTime>2018-05-10T03:29:08.000Z</pubTime>
         
-        <tag>前端</tag>
-         
         <tag>js</tag>
+         
+        <tag>前端</tag>
          
          
            
